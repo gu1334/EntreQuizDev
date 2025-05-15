@@ -66,40 +66,38 @@ public class PerguntaService {
     // Atualiza o projeto (sem atualizar as variações dele) usando path
     public Pergunta atualizarPergunta(Long id, AtualizarPergunta atualizarPergunta) {
 
-        PerguntaDTO perguntaDTO = new PerguntaDTO();
 
-        Pergunta perguntaAntiga = perguntaRepository.findById(id).orElse(null);
+        Pergunta projetoExistente = perguntaRepository.findById(id).orElseThrow(()
+                -> new DadosInvalidosException("Projeto não encontrado"));
 
-        if (perguntaDTO.getPergunta() != null) {
-            perguntaAntiga.setPergunta(perguntaDTO.getPergunta());
+        if (atualizarPergunta.pergunta() != null) {
+            projetoExistente.setPergunta(atualizarPergunta.pergunta());
         }
-        if (perguntaDTO.getResposta_certa() != null) {
-            perguntaAntiga.setResposta_certa(perguntaDTO.getResposta_certa());
+        if (atualizarPergunta.resposta_certa() != null) {
+            projetoExistente.setResposta_certa(atualizarPergunta.resposta_certa());
         }
-        if (perguntaDTO.getResposta_errada_1() != null) {
-            perguntaAntiga.setResposta_errada_1(perguntaDTO.getResposta_errada_1());
+        if (atualizarPergunta.resposta_errada_1() != null) {
+            projetoExistente.setResposta_errada_1(atualizarPergunta.resposta_errada_1());
         }
-        if (perguntaDTO.getResposta_errada_2() != null) {
-            perguntaAntiga.setResposta_errada_2(perguntaDTO.getResposta_errada_2());
+        if (atualizarPergunta.resposta_errada_2() != null) {
+            projetoExistente.setResposta_errada_2(atualizarPergunta.resposta_errada_2() );
         }
-        if (perguntaDTO.getResposta_errada_3() != null) {
-            perguntaAntiga.setResposta_errada_3(perguntaDTO.getResposta_errada_3());
+        if (atualizarPergunta.resposta_errada_3() != null) {
+            projetoExistente.setResposta_errada_3(atualizarPergunta.resposta_errada_3());
         }
-        if (perguntaDTO.getResposta_errada_4() != null) {
-            perguntaAntiga.setResposta_errada_4(perguntaDTO.getResposta_errada_4());
+        if (atualizarPergunta.resposta_errada_4() != null) {
+            projetoExistente.setResposta_errada_4(atualizarPergunta.resposta_errada_4());
         }
-        if (perguntaDTO.getResposta_errada_5() != null) {
-            perguntaAntiga.setResposta_errada_5(perguntaDTO.getResposta_errada_5());
+        if (atualizarPergunta.resposta_errada_5() != null) {
+            projetoExistente.setResposta_errada_5(atualizarPergunta.resposta_errada_5());
         }
-        if (perguntaDTO.getResposta_errada_6() != null) {
-            perguntaAntiga.setResposta_errada_6(perguntaDTO.getResposta_errada_6());
+        if (atualizarPergunta.resposta_errada_6() != null) {
+            projetoExistente.setResposta_errada_6(atualizarPergunta.resposta_errada_6());
         }
-        if (perguntaDTO.getResposta_errada_7() != null) {
-            perguntaAntiga.setResposta_errada_7(perguntaDTO.getResposta_errada_7());
+        if (atualizarPergunta.resposta_errada_7() != null) {
+            projetoExistente.setResposta_errada_7(atualizarPergunta.resposta_errada_7());
         }
-
-
-        return perguntaRepository.save(perguntaAntiga);
+            return perguntaRepository.save(projetoExistente);
 
     }
 }

@@ -2,6 +2,7 @@ package br.com.EntreQuizDev.controller;
 
 import br.com.EntreQuizDev.dto.PerguntaDTO;
 import br.com.EntreQuizDev.entity.Pergunta;
+import br.com.EntreQuizDev.service.AtualizarPergunta;
 import br.com.EntreQuizDev.service.PerguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -24,6 +25,14 @@ public class PerguntaController {
 
     }
 
-    @PatchMapping{"/{id}"}
-public ResponseEntity<?> atualizarPergunta
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> atualizarPergunta(@PathVariable("id") Long id, @RequestBody AtualizarPergunta atualizarPergunta) {
+
+
+        perguntaService.atualizarPergunta(id, atualizarPergunta);
+        return ResponseEntity.noContent().build();
+
+    }
+
+
 }
