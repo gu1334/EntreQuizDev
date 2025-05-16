@@ -8,6 +8,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
 @Service
@@ -99,5 +101,14 @@ public class PerguntaService {
         }
             return perguntaRepository.save(projetoExistente);
 
+    }
+
+    public List<Pergunta> buscarTodasPerguntas() {
+        return perguntaRepository.findAll();
+    }
+
+    public Pergunta deletarPergunta(Long id) {
+        perguntaRepository.deleteById(id);
+        return perguntaRepository.findById(id).get();
     }
 }
