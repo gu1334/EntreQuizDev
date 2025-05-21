@@ -5,6 +5,7 @@ import br.com.EntreQuizDev.entity.Pergunta;
 import br.com.EntreQuizDev.service.AtualizarPergunta;
 import br.com.EntreQuizDev.service.PerguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,9 +40,10 @@ public class PerguntaController {
         return perguntaService.buscarTodasPerguntas();
     }
 
-    @DeleteMapping
-    public Pergunta deletarPergunta(@PathVariable("id") Long id) {
-        return perguntaService.deletarPergunta(id);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarPergunta(@PathVariable Long id) {
+        perguntaService.deletarPergunta(id);
     }
 
 }

@@ -1,39 +1,24 @@
 services:
-  entrequizdev:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: entrequizdev/api
-    container_name: entrequizdev-api
+  api_service:
+    build: .
+    restart: always
     ports:
-      - "8082:8082"
-      - "5005:5005"
+      - 8080:8080
     environment:
-      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
-      - PROFILE=dev
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/entrequizdev_mysql
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=admin123
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/basics?allowPublicKeyRetrieval=true
     depends_on:
-      - db
-    restart: always
-    networks:
-      - entrequiznet
+      - mysqldb
 
-  db:
-    image: mysql:5.6
-    container_name: entrequizdev-db
-    ports:
-      - "3307:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=admin123
-      - MYSQL_DATABASE=entrequizdev_mysql
     volumes:
-      - ./docker/volumes_mysql:/var/lib/mysql
-    restart: always
-    networks:
-      - entrequiznet
+      - .m2:/root/.m2
 
-networks:
-  entrequiznet:
-    driver: bridge
+  mysqldb:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3306:3306
+
+    environment:
+      MYSQL_DATABASE: basics
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin123

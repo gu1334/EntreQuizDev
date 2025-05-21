@@ -107,8 +107,11 @@ public class PerguntaService {
         return perguntaRepository.findAll();
     }
 
-    public Pergunta deletarPergunta(Long id) {
+    public void deletarPergunta(Long id) {
+        if (!perguntaRepository.existsById(id)) {
+            throw new EntityNotFoundException("Pergunta com id " + id + " não encontrada.");
+        }
         perguntaRepository.deleteById(id);
-        return perguntaRepository.findById(id).get();
     }
+
 }
