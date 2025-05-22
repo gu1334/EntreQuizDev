@@ -28,7 +28,7 @@ public class PerguntaService {
             throw new DadosInvalidosException("Campos obrigatórios não preenchidos.");
         }
 
-            // valida se o projeto se o id existe e se sim atualiza o mesmo
+        // valida se o projeto se o id existe e se sim atualiza o mesmo
 
         if (perguntaDTO.getId() != null) {
 
@@ -37,31 +37,31 @@ public class PerguntaService {
                     new EntityNotFoundException("Pergunta com ID " + perguntaDTO.getId() + " não encontrada."))
                     : new Pergunta();
 
-                projetoExistente.setPergunta(perguntaDTO.getPergunta());
-                projetoExistente.setResposta_certa(perguntaDTO.getResposta_certa());
-                projetoExistente.setResposta_errada_1(perguntaDTO.getResposta_errada_1());
-                projetoExistente.setResposta_errada_2(perguntaDTO.getResposta_errada_2());
-                projetoExistente.setResposta_errada_3(perguntaDTO.getResposta_errada_3());
-                projetoExistente.setResposta_errada_4(perguntaDTO.getResposta_errada_4());
-                projetoExistente.setResposta_errada_5(perguntaDTO.getResposta_errada_5());
-                projetoExistente.setResposta_errada_6(perguntaDTO.getResposta_errada_6());
-                projetoExistente.setResposta_errada_7(perguntaDTO.getResposta_errada_7());
+            projetoExistente.setPergunta(perguntaDTO.getPergunta());
+            projetoExistente.setResposta_certa(perguntaDTO.getResposta_certa());
+            projetoExistente.setResposta_errada_1(perguntaDTO.getResposta_errada_1());
+            projetoExistente.setResposta_errada_2(perguntaDTO.getResposta_errada_2());
+            projetoExistente.setResposta_errada_3(perguntaDTO.getResposta_errada_3());
+            projetoExistente.setResposta_errada_4(perguntaDTO.getResposta_errada_4());
+            projetoExistente.setResposta_errada_5(perguntaDTO.getResposta_errada_5());
+            projetoExistente.setResposta_errada_6(perguntaDTO.getResposta_errada_6());
+            projetoExistente.setResposta_errada_7(perguntaDTO.getResposta_errada_7());
 
-                return perguntaRepository.save(projetoExistente);
-            }
+            return perguntaRepository.save(projetoExistente);
+        }
 
-            Pergunta novaPergunta = new Pergunta();
-            novaPergunta.setPergunta(perguntaDTO.getPergunta());
-            novaPergunta.setResposta_certa(perguntaDTO.getResposta_certa());
-            novaPergunta.setResposta_errada_1(perguntaDTO.getResposta_errada_1());
-            novaPergunta.setResposta_errada_2(perguntaDTO.getResposta_errada_2());
-            novaPergunta.setResposta_errada_3(perguntaDTO.getResposta_errada_3());
-            novaPergunta.setResposta_errada_4(perguntaDTO.getResposta_errada_4());
-            novaPergunta.setResposta_errada_5(perguntaDTO.getResposta_errada_5());
-            novaPergunta.setResposta_errada_6(perguntaDTO.getResposta_errada_6());
-            novaPergunta.setResposta_errada_7(perguntaDTO.getResposta_errada_7());
+        Pergunta novaPergunta = new Pergunta();
+        novaPergunta.setPergunta(perguntaDTO.getPergunta());
+        novaPergunta.setResposta_certa(perguntaDTO.getResposta_certa());
+        novaPergunta.setResposta_errada_1(perguntaDTO.getResposta_errada_1());
+        novaPergunta.setResposta_errada_2(perguntaDTO.getResposta_errada_2());
+        novaPergunta.setResposta_errada_3(perguntaDTO.getResposta_errada_3());
+        novaPergunta.setResposta_errada_4(perguntaDTO.getResposta_errada_4());
+        novaPergunta.setResposta_errada_5(perguntaDTO.getResposta_errada_5());
+        novaPergunta.setResposta_errada_6(perguntaDTO.getResposta_errada_6());
+        novaPergunta.setResposta_errada_7(perguntaDTO.getResposta_errada_7());
 
-            return perguntaRepository.save(novaPergunta);
+        return perguntaRepository.save(novaPergunta);
     }
 
 
@@ -82,7 +82,7 @@ public class PerguntaService {
             projetoExistente.setResposta_errada_1(atualizarPergunta.resposta_errada_1());
         }
         if (atualizarPergunta.resposta_errada_2() != null) {
-            projetoExistente.setResposta_errada_2(atualizarPergunta.resposta_errada_2() );
+            projetoExistente.setResposta_errada_2(atualizarPergunta.resposta_errada_2());
         }
         if (atualizarPergunta.resposta_errada_3() != null) {
             projetoExistente.setResposta_errada_3(atualizarPergunta.resposta_errada_3());
@@ -99,7 +99,7 @@ public class PerguntaService {
         if (atualizarPergunta.resposta_errada_7() != null) {
             projetoExistente.setResposta_errada_7(atualizarPergunta.resposta_errada_7());
         }
-            return perguntaRepository.save(projetoExistente);
+        return perguntaRepository.save(projetoExistente);
 
     }
 
