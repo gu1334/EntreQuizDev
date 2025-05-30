@@ -2,7 +2,7 @@ package br.com.EntreQuizDev.controller;
 
 import br.com.EntreQuizDev.dto.PerguntaDTO;
 import br.com.EntreQuizDev.entity.Pergunta;
-import br.com.EntreQuizDev.service.AtualizarPergunta;
+import br.com.EntreQuizDev.dto.AtualizarPergunta;
 import br.com.EntreQuizDev.service.PerguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

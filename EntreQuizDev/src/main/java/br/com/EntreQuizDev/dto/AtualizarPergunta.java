@@ -1,4 +1,4 @@
-package br.com.EntreQuizDev.service;
+package br.com.EntreQuizDev.dto;
 
 public record AtualizarPergunta(
         String pergunta,

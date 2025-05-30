@@ -2,6 +2,7 @@ package br.com.EntreQuizDev.service;
 
 import br.com.EntreQuizDev.dto.PerguntaDTO;
 import br.com.EntreQuizDev.entity.Pergunta;
+import br.com.EntreQuizDev.dto.AtualizarPergunta;
 import br.com.EntreQuizDev.exception.DadosInvalidosException;
 import br.com.EntreQuizDev.repository.PerguntaRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -17,6 +18,8 @@ public class PerguntaService {
 
     @Autowired
     private PerguntaRepository perguntaRepository;
+
+    @Autowired
 
     public Pergunta createOrUptadeQuestion(PerguntaDTO perguntaDTO) {
 
