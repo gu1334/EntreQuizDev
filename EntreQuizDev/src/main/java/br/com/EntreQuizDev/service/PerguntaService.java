@@ -19,7 +19,7 @@ public class PerguntaService {
     @Autowired
     private PerguntaRepository perguntaRepository;
 
-    @Autowired
+
 
     public Pergunta createOrUptadeQuestion(PerguntaDTO perguntaDTO) {
 

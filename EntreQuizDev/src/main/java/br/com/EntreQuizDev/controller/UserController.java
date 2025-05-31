@@ -46,4 +46,13 @@ public class UserController {
         return new ResponseEntity<>("Administrador autenticado com sucesso", HttpStatus.OK);
     }
 
+    @GetMapping("/users/me")
+    public ResponseEntity<LoginUserDto> getCurrentUser(@RequestParam String token) {
+        usuarioService.loginUser(token);
+        return new ResponseEntity<>(Htt)
+    }
+
+print
+
+
 }

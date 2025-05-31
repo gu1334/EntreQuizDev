@@ -32,6 +32,8 @@ public class UsuarioService {
     @Autowired
     private SecurityConfiguration securityConfiguration;
 
+    @Autowired
+
     // Método responsável por autenticar um usuário e retornar um token JWT
     public RecoveryJwtTokenDto authenticateUser(LoginUserDto loginUserDto) {
         // Cria um objeto de autenticação com o email e a senha do usuário
@@ -65,12 +67,24 @@ public class UsuarioService {
                 // Atribui ao usuário uma permissão específica
                 .roles(List.of(Role.builder().name(RoleName.ROLE_JOGADOR).build()))
                 .build();
-//                .roles(List.of(Role.builder().name(createUserDto.role()).build()))
-//                .build();
+
 
         // Salva o novo usuário no banco de dados
         usuarioRepository.save(newUser);
 
+
+    }
+
+
+
+    public UserDetailsImpl loginUser(String token) {
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(token, token));
+        userDetails.getUsuario();
+        userDetails.getUsername();
+        userDetails.getPassword();
+
+        return userDetails;
 
     }
 }
