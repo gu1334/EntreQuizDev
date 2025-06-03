@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7492f324-5777-433b-b1ed-093e59937505" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/auto.cnf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/entrequizdev_mysql/db.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/entrequizdev_mysql/perguntas.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/entrequizdev_mysql/perguntas.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/entrequizdev_mysql/question.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/entrequizdev_mysql/question.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/ib_logfile0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/ib_logfile1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/ibdata1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/columns_priv.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/columns_priv.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/columns_priv.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/db.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/db.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/db.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/event.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/event.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/event.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/func.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/func.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/func.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/general_log.CSM" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/general_log.CSV" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/general_log.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_category.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_category.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_category.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_keyword.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_keyword.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_keyword.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_relation.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_relation.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_relation.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_topic.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_topic.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/help_topic.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/innodb_index_stats.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/innodb_index_stats.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/innodb_table_stats.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/innodb_table_stats.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/ndb_binlog_index.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/ndb_binlog_index.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/ndb_binlog_index.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/plugin.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/plugin.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/plugin.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proc.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proc.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proc.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/procs_priv.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/procs_priv.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/procs_priv.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proxies_priv.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proxies_priv.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/proxies_priv.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/servers.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/servers.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/servers.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_master_info.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_master_info.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_relay_log_info.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_relay_log_info.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_worker_info.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slave_worker_info.ibd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slow_log.CSM" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slow_log.CSV" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/slow_log.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/tables_priv.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/tables_priv.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/tables_priv.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_leap_second.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_leap_second.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_leap_second.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_name.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_name.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition_type.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition_type.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/time_zone_transition_type.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/user.MYD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/user.MYI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/mysql/user.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/accounts.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/cond_instances.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/db.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_current.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_history.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_history_long.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_summary_by_account_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_summary_by_host_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_summary_by_thread_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_summary_by_user_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_stages_summary_global_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_current.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_history.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_history_long.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_by_account_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_by_digest.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_by_host_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_by_thread_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_by_user_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_statements_summary_global_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_current.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_history.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_history_long.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_by_account_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_by_host_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_by_instance.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_by_thread_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_by_user_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/events_waits_summary_global_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/file_instances.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/file_summary_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/file_summary_by_instance.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/host_cache.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/hosts.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/mutex_instances.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/objects_summary_global_by_type.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/performance_timers.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/rwlock_instances.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/session_account_connect_attrs.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/session_connect_attrs.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/setup_actors.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/setup_consumers.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/setup_instruments.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/setup_objects.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/setup_timers.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/socket_instances.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/socket_summary_by_event_name.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/socket_summary_by_instance.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/table_io_waits_summary_by_index_usage.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/table_io_waits_summary_by_table.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/table_lock_waits_summary_by_table.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/threads.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/docker/volumes_mysql/performance_schema/users.frm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/hs_err_pid17816.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/hs_err_pid25680.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/replay_pid25680.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/QuizServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/controller/PerguntaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/dto/AtualizarPergunta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/dto/PerguntaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/entity/Pergunta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/repository/PerguntaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/java/br/com/EntreQuizDev.quiz/service/PerguntaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz-service/src/test/java/br/com/EntreQuizDev/EntreQuizDevApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/auto.cnf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/entrequizdev_mysql/db.opt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/entrequizdev_mysql/perguntas.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/entrequizdev_mysql/perguntas.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/entrequizdev_mysql/question.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/entrequizdev_mysql/question.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/ib_logfile0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/ib_logfile1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/ibdata1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/columns_priv.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/columns_priv.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/columns_priv.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/db.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/db.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/db.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/event.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/event.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/event.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/func.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/func.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/func.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/general_log.CSM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/general_log.CSV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/general_log.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_category.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_category.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_category.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_keyword.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_keyword.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_keyword.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_relation.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_relation.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_relation.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_topic.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_topic.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/help_topic.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/innodb_index_stats.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/innodb_index_stats.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/innodb_table_stats.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/innodb_table_stats.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/ndb_binlog_index.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/ndb_binlog_index.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/ndb_binlog_index.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/plugin.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/plugin.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/plugin.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proc.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proc.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proc.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/procs_priv.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/procs_priv.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/procs_priv.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proxies_priv.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proxies_priv.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/proxies_priv.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/servers.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/servers.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/servers.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_master_info.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_master_info.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_relay_log_info.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_relay_log_info.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_worker_info.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slave_worker_info.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slow_log.CSM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slow_log.CSV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/slow_log.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/tables_priv.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/tables_priv.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/tables_priv.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_leap_second.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_leap_second.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_leap_second.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_name.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_name.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition_type.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition_type.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/time_zone_transition_type.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/user.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/user.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/mysql/user.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/accounts.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/cond_instances.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/db.opt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_current.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_history.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_history_long.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_summary_by_account_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_summary_by_host_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_summary_by_thread_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_summary_by_user_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_stages_summary_global_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_current.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_history.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_history_long.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_by_account_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_by_digest.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_by_host_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_by_thread_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_by_user_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_statements_summary_global_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_current.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_history.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_history_long.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_by_account_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_by_host_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_by_instance.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_by_thread_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_by_user_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/events_waits_summary_global_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/file_instances.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/file_summary_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/file_summary_by_instance.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/host_cache.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/hosts.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/mutex_instances.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/objects_summary_global_by_type.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/performance_timers.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/rwlock_instances.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/session_account_connect_attrs.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/session_connect_attrs.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/setup_actors.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/setup_consumers.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/setup_instruments.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/setup_objects.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/setup_timers.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/socket_instances.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/socket_summary_by_event_name.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/socket_summary_by_instance.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/table_io_waits_summary_by_index_usage.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/table_io_waits_summary_by_table.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/table_lock_waits_summary_by_table.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/threads.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/volumes_mysql/performance_schema/users.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid17816.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid25680.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay_pid25680.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/EntreQuizDevApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/config/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/config/UserAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/config/UserDetailsImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/config/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/controller/PerguntaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/AtualizarPergunta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/CreateUserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/LoginUserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/PerguntaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/RecoveryJwtTokenDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/dto/RecoveryUserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/entity/Pergunta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/entity/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/enums/RoleName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/exception/DadosInvalidosException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/repository/PerguntaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/repository/UsuarioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/service/JwtTokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/service/PerguntaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/EntreQuizDev/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/EntreQuizDev/EntreQuizDevApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2wk5yzy9TcamAB7DaBeiKjM7OIT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.EntreQuizDev [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EntreQuizDevApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/EntreQuizDev/EntreQuizDev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.EntreQuizDev.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\EntreQuizDev\EntreQuizDev\docker" />
+      <recent name="D:\EntreQuizDev\EntreQuizDev\user-service" />
+      <recent name="D:\EntreQuizDev\EntreQuizDev" />
+      <recent name="D:\EntreQuizDev\EntreQuizDev\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EntreQuizDevApplication">
+    <configuration name="EntreQuizDevApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="GOOGLE_CI" value="369529249872-ju9vc7r327pvdqg956ttqln84b03p92h.apps.googleusercontent.com" />
+        <env name="GOOGLE_CS" value="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" />
+      </envs>
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="User-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.EntreQuizDev.EntreQuizDevApplication" />
+      <option name="VM_PARAMETERS" value="-DDB_NAME=root -DDB_PASSWORD=HGHencExfjXbxCUBGTSHxoBbZNSoZcVK -DDB_URL=jdbc:mysql://shinkansen.proxy.rlwy.net:20166/railway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Spring Boot.EntreQuizDevApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7492f324-5777-433b-b1ed-093e59937505" name="Changes" comment="" />
+      <created>1746572989514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746572989514</updated>
+      <workItem from="1746572990851" duration="719000" />
+      <workItem from="1746573755673" duration="346000" />
+      <workItem from="1746823166115" duration="550000" />
+      <workItem from="1746823879312" duration="4438000" />
+      <workItem from="1747123422534" duration="214000" />
+      <workItem from="1747123766271" duration="1967000" />
+      <workItem from="1747125824686" duration="11224000" />
+      <workItem from="1747693390779" duration="1587000" />
+      <workItem from="1747867643497" duration="2189000" />
+      <workItem from="1747952358117" duration="4908000" />
+      <workItem from="1748299116991" duration="975000" />
+      <workItem from="1748300359429" duration="10520000" />
+      <workItem from="1748558703879" duration="8234000" />
+      <workItem from="1748726368465" duration="23000" />
+      <workItem from="1748808782226" duration="1326000" />
+      <workItem from="1748810394784" duration="22000" />
+      <workItem from="1748914071885" duration="15000" />
+      <workItem from="1748914092599" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
