@@ -15,8 +15,9 @@
 
     <modules>
         <module>user-service</module>
-        <module>quiz-service</module>  <!-- não esquecer de adicionar aqui -->
+        <module>quiz-service</module>
     </modules>
+
 
     <properties>
         <java.version>17</java.version>
