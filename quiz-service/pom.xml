@@ -16,6 +16,13 @@
     <description>Microserviço responsável pela gestão de quizzes no EntreQuizDev</description>
 
     <dependencies>
+        <dependency>
+            <groupId>com</groupId>
+            <artifactId>auth-library</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
         <!-- Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

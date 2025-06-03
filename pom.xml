@@ -16,7 +16,9 @@
     <modules>
         <module>user-service</module>
         <module>quiz-service</module>
+        <module>auth-library</module> <!-- Adicione essa linha -->
     </modules>
+
 
 
     <properties>
