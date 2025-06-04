@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="quiz-service" />
+        <module name="shared-lib" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
