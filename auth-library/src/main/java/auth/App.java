@@ -1,4 +1,4 @@
-package com;
+package auth;
 
 /**
  * Hello world!

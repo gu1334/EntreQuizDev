@@ -1,4 +1,4 @@
-package com;
+package auth;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

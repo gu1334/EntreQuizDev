@@ -3,15 +3,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>br.com.</groupId>
+    <groupId>br.com</groupId>
     <artifactId>EntreQuizDev</artifactId>
     <version>1.0.0</version>
   </parent>
-  <groupId>com</groupId>
+
+
+  <groupId>br.com.auth</groupId>
   <artifactId>auth-library</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>auth-library</name>
   <url>http://maven.apache.org</url>
+
+
+
+
   <dependencies>
        <dependency>
       <groupId>junit</groupId>
