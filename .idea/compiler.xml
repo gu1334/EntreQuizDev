@@ -8,13 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="quiz-service" />
-        <module name="shared-lib" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth-library" target="1.8" />
       <module name="EntreQuizDev (1)" target="1.5" />
+      <module name="shared-lib" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

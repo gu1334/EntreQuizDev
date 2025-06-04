@@ -16,11 +16,6 @@
     <description>Microserviço responsável pela gestão de quizzes no EntreQuizDev</description>
 
     <dependencies>
-        <dependency>
-            <groupId>br.com</groupId>
-            <artifactId>shared-lib</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
 
 

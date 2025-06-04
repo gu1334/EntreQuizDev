@@ -16,7 +16,6 @@
     <modules>
         <module>user-service</module>
         <module>quiz-service</module>
-        <module>shared-lib</module>
     </modules>
 
 
