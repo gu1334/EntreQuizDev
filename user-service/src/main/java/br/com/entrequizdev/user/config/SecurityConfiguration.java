@@ -20,16 +20,16 @@ public class SecurityConfiguration {
     @Autowired
     private UserAuthenticationFilter userAuthenticationFilter;
 
-    public static final String [] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
-            "/users/login", // Url que usaremos para fazer login
-            "/users" // Url que usaremos para criar um usuário
-
+    public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
+            "/users/login",
+            "/users",
+            "/auth/pergunta"
     };
 
     // Endpoints que requerem autenticação para serem acessados
     public static final String [] ENDPOINTS_WITH_AUTHENTICATION_REQUIRED = {
             "/users/test",
-            "/users/me"
+            "/users/me",
     };
 
     // Endpoints que só podem ser acessador por usuários com permissão de cliente
@@ -39,9 +39,7 @@ public class SecurityConfiguration {
 
     // Endpoints que só podem ser acessador por usuários com permissão de administrador
     public static final String [] ENDPOINTS_ADMIN = {
-            "/users/test/administrator",
-            "/CadastrarPergunta",
-            "/CadastrarPergunta/**"
+            "/users/test/administrator"
     };
 
     @Bean

@@ -26,11 +26,13 @@ public class PerguntaService {
 
 // valida se o projeto esta com a pergunta, resposta certa, resposta errada 1 2 e 3 preenchidas, caso contrario retorna erro
         if (!isNotBlank(perguntaDTO.getPergunta()) ||
+                !isNotBlank(perguntaDTO.getResposta_certa()) || // <-- adicionar
                 !isNotBlank(perguntaDTO.getResposta_errada_1()) ||
                 !isNotBlank(perguntaDTO.getResposta_errada_2()) ||
                 !isNotBlank(perguntaDTO.getResposta_errada_3())) {
             throw new DadosInvalidosException("Campos obrigatórios não preenchidos.");
         }
+
 
         // valida se o projeto se o id existe e se sim atualiza o mesmo
 
