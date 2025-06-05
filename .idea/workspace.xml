@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/AuthClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/dto/ChangeUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/repository/RoleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/QuizServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/QuizServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/test/java/br/com/EntreQuizDev/QuizServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/test/java/br/com/EntreQuizDev/QuizServiceApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/JwtTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/JwtTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +171,7 @@
       <workItem from="1749073013396" duration="1839000" />
       <workItem from="1749075197094" duration="2620000" />
       <workItem from="1749078090523" duration="1938000" />
-      <workItem from="1749083662675" duration="359000" />
+      <workItem from="1749083662675" duration="4331000" />
     </task>
     <servers />
   </component>

@@ -2,12 +2,15 @@ package br.com.entrequizdev.user.service;
 
 import br.com.entrequizdev.user.config.SecurityConfiguration;
 import br.com.entrequizdev.user.config.UserDetailsImpl;
+import br.com.entrequizdev.user.dto.ChangeUser;
 import br.com.entrequizdev.user.dto.CreateUserDto;
 import br.com.entrequizdev.user.dto.LoginUserDto;
 import br.com.entrequizdev.user.dto.RecoveryJwtTokenDto;
 import br.com.entrequizdev.user.entity.Role;
 import br.com.entrequizdev.user.entity.Usuario;
 import br.com.entrequizdev.user.enums.RoleName;
+import br.com.entrequizdev.user.exception.DadosInvalidosException;
+import br.com.entrequizdev.user.repository.RoleRepository;
 import br.com.entrequizdev.user.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,7 +35,8 @@ public class UsuarioService {
     @Autowired
     private SecurityConfiguration securityConfiguration;
 
-
+    @Autowired
+    private RoleRepository roleRepository; // agora você pode buscar a role pelo enum
 
     // Método responsável por autenticar um usuário e retornar um token JWT
     public RecoveryJwtTokenDto authenticateUser(LoginUserDto loginUserDto) {
@@ -59,6 +63,7 @@ public class UsuarioService {
             throw new RuntimeException("email ja cadastrado");
         }
         // Cria um novo usuário com os dados fornecidos
+        //caso queira mudar a role, tem que fazer um patch
         Usuario newUser = Usuario.builder()
                 .nome(createUserDto.name())
                 .email(createUserDto.email())
@@ -76,4 +81,29 @@ public class UsuarioService {
     }
 
 
+    public Usuario mudarDadosUsuario(String email, ChangeUser changeUser) {
+        Usuario usuarioAntigo = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new DadosInvalidosException("Usuário não encontrado"));
+
+        if (changeUser.name() != null) {
+            usuarioAntigo.setNome(changeUser.name());
+        }
+
+        if (changeUser.email() != null) {
+            usuarioAntigo.setEmail(changeUser.email());
+        }
+
+        if (changeUser.password() != null) {
+            usuarioAntigo.setSenha(changeUser.password());
+        }
+
+        if (changeUser.roleName() != null) {
+            Role role = roleRepository.findByName(changeUser.roleName())
+                    .orElseThrow(() -> new DadosInvalidosException("Role não encontrada"));
+
+            usuarioAntigo.setRoles(List.of(role)); // substitui todas as roles por essa nova
+        }
+
+        return usuarioRepository.save(usuarioAntigo);
+    }
 }

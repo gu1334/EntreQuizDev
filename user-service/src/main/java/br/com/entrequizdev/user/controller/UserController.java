@@ -1,6 +1,7 @@
 package br.com.entrequizdev.user.controller;
 
 
+import br.com.entrequizdev.user.dto.ChangeUser;
 import br.com.entrequizdev.user.dto.CreateUserDto;
 import br.com.entrequizdev.user.dto.LoginUserDto;
 import br.com.entrequizdev.user.dto.RecoveryJwtTokenDto;
@@ -46,6 +47,14 @@ public class UserController {
     public ResponseEntity<String> getAdminAuthenticationTest() {
         return new ResponseEntity<>("Administrador autenticado com sucesso", HttpStatus.OK);
     }
+
+    //mudar todos os dados do usuario
+    @PatchMapping("/changeUser/{email}")
+    public ResponseEntity<?> mudarDadosUser(@PathVariable("email") String email, @RequestBody ChangeUser changeUser) {
+        usuarioService.mudarDadosUsuario(email, changeUser);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 //    @GetMapping("/users/me")
 //    public ResponseEntity<LoginUserDto> getCurrentUser(@RequestParam String token) {

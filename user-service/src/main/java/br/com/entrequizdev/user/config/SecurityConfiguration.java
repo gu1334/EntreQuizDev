@@ -39,7 +39,8 @@ public class SecurityConfiguration {
 
     // Endpoints que só podem ser acessador por usuários com permissão de administrador
     public static final String [] ENDPOINTS_ADMIN = {
-            "/users/test/administrator"
+            "/users/test/administrator",
+            "/users/changeUser/**"
     };
 
     @Bean
