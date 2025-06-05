@@ -1,10 +1,7 @@
 package br.com.entrequizdev.user.controller;
 
 
-import br.com.entrequizdev.user.dto.ChangeUser;
-import br.com.entrequizdev.user.dto.CreateUserDto;
-import br.com.entrequizdev.user.dto.LoginUserDto;
-import br.com.entrequizdev.user.dto.RecoveryJwtTokenDto;
+import br.com.entrequizdev.user.dto.*;
 import br.com.entrequizdev.user.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,17 +47,17 @@ public class UserController {
 
     //mudar todos os dados do usuario
     @PatchMapping("/changeUser/{email}")
-    public ResponseEntity<?> mudarDadosUser(@PathVariable("email") String email, @RequestBody ChangeUser changeUser) {
+    public ResponseEntity<?> mudarDadosUser(@PathVariable("email") String email, @RequestBody changeUser changeUser) {
         usuarioService.mudarDadosUsuario(email, changeUser);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
-//    @GetMapping("/users/me")
-//    public ResponseEntity<LoginUserDto> getCurrentUser(@RequestParam String token) {
-//        usuarioService.loginUser(token);
-//        return new ResponseEntity<>(Htt)
-//    }
+    @GetMapping("/me")
+    public ResponseEntity<UserResponseDto> getCurrentUser(@RequestHeader("Authorization") String authorizationHeader) {
+        return usuarioService.dadosUsuario(authorizationHeader);
+    }
+
 
 
 

@@ -2,10 +2,7 @@ package br.com.entrequizdev.user.service;
 
 import br.com.entrequizdev.user.config.SecurityConfiguration;
 import br.com.entrequizdev.user.config.UserDetailsImpl;
-import br.com.entrequizdev.user.dto.ChangeUser;
-import br.com.entrequizdev.user.dto.CreateUserDto;
-import br.com.entrequizdev.user.dto.LoginUserDto;
-import br.com.entrequizdev.user.dto.RecoveryJwtTokenDto;
+import br.com.entrequizdev.user.dto.*;
 import br.com.entrequizdev.user.entity.Role;
 import br.com.entrequizdev.user.entity.Usuario;
 import br.com.entrequizdev.user.enums.RoleName;
@@ -13,6 +10,8 @@ import br.com.entrequizdev.user.exception.DadosInvalidosException;
 import br.com.entrequizdev.user.repository.RoleRepository;
 import br.com.entrequizdev.user.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -37,6 +36,7 @@ public class UsuarioService {
 
     @Autowired
     private RoleRepository roleRepository; // agora você pode buscar a role pelo enum
+
 
     // Método responsável por autenticar um usuário e retornar um token JWT
     public RecoveryJwtTokenDto authenticateUser(LoginUserDto loginUserDto) {
@@ -81,7 +81,7 @@ public class UsuarioService {
     }
 
 
-    public Usuario mudarDadosUsuario(String email, ChangeUser changeUser) {
+    public Usuario mudarDadosUsuario(String email, changeUser changeUser) {
         Usuario usuarioAntigo = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new DadosInvalidosException("Usuário não encontrado"));
 
@@ -106,4 +106,36 @@ public class UsuarioService {
 
         return usuarioRepository.save(usuarioAntigo);
     }
+
+    public ResponseEntity<UserResponseDto> dadosUsuario(String authorizationHeader) {
+        try {
+            if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+
+            String token = authorizationHeader.substring(7);
+            String email = jwtTokenService.getSubjectFromToken(token);
+
+            Usuario usuario = usuarioRepository.findByEmail(email)
+                    .orElseThrow(() -> new DadosInvalidosException("Usuário não encontrado"));
+
+            List<String> roles = usuario.getRoles().stream()
+                    .map(role -> role.getName().name())
+                    .toList();
+
+            UserResponseDto dto = new UserResponseDto(
+                    usuario.getNome(),
+                    usuario.getEmail(),
+                    roles
+            );
+
+            return ResponseEntity.ok(dto);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+
+
 }
