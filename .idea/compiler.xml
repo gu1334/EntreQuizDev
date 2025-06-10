@@ -2,17 +2,24 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EntreQuizDev" />
+        <module name="quiz-service" />
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-library" target="1.8" />
+      <module name="EntreQuizDev (1)" target="1.5" />
+      <module name="shared-lib" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="EntreQuizDev" options="-parameters" />
+      <module name="EntreQuizDev" options="" />
     </option>
   </component>
 </project>
