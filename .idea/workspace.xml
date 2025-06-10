@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Dockerfile" />
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="Enum" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,25 +26,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Maven.EntreQuizDev [clean,install].executor": "Run",
-    "Maven.quiz-service [clean,install].executor": "Run",
-    "Maven.user-service [clean,install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.QuizServiceApplication (1).executor": "Run",
-    "Spring Boot.QuizServiceApplication.executor": "Debug",
-    "Spring Boot.UserServiceApplication (1).executor": "Run",
-    "Spring Boot.UserServiceApplication.executor": "Run",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "D:/EntreQuizDev/user-service/src/main/java/br/com/EntreQuizDev.user",
-    "last_opened_file_path": "D:/EntreQuizDev/quiz-service/src/main/java/br/com/entrequizdev/quiz",
+    "last_opened_file_path": "D:/EntreQuizDev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,79 +38,24 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\EntreQuizDev\quiz-service\src\main\java\br\com\entrequizdev\quiz" />
-      <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\jwt" />
-      <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\exceptions" />
-      <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\dto" />
-      <recent name="D:\EntreQuizDev\shared-lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\EntreQuizDev\EntreQuizDev" />
-      <recent name="D:\EntreQuizDev\shared-lib" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.com.EntreQuizDev.quiz.exception" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="KtorApplicationConfigurationType" />
-        <option value="MicronautRunConfigurationType" />
-        <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
-    <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="quiz-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
+  <component name="RunManager">
+    <configuration name="EntreQuizDevApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="EntreQuizDev" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.EntreQuizDev.EntreQuizDevApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="user-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.user.UserServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="envFilePath" value="" />
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Spring Boot.QuizServiceApplication" />
-      <item itemvalue="Spring Boot.UserServiceApplication" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -149,27 +67,6 @@
       <option name="presentableId" value="Default" />
       <updated>1746572140904</updated>
       <workItem from="1746572142170" duration="840000" />
-      <workItem from="1748810122949" duration="242000" />
-      <workItem from="1748810418359" duration="72000" />
-      <workItem from="1748810506917" duration="131000" />
-      <workItem from="1748810666252" duration="333000" />
-      <workItem from="1748811767542" duration="31000" />
-      <workItem from="1748811824421" duration="405000" />
-      <workItem from="1748812335145" duration="304000" />
-      <workItem from="1748812731874" duration="94000" />
-      <workItem from="1748813400543" duration="644000" />
-      <workItem from="1748913449314" duration="150000" />
-      <workItem from="1748914116181" duration="40000" />
-      <workItem from="1748914480605" duration="235000" />
-      <workItem from="1748986203498" duration="3350000" />
-      <workItem from="1748989668467" duration="5323000" />
-      <workItem from="1748998333949" duration="2877000" />
-      <workItem from="1749073013396" duration="1839000" />
-      <workItem from="1749075197094" duration="2620000" />
-      <workItem from="1749078090523" duration="1938000" />
-      <workItem from="1749083662675" duration="4331000" />
-      <workItem from="1749162345284" duration="3358000" />
-      <workItem from="1749509325423" duration="10949000" />
     </task>
     <servers />
   </component>
