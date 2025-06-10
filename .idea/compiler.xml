@@ -7,19 +7,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="quiz-service" />
-        <module name="user-service" />
+      </profile>
+      <profile name="Annotation profile for EntreQuizDev" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="EntreQuizDev" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="auth-library" target="1.8" />
-      <module name="EntreQuizDev (1)" target="1.5" />
-      <module name="shared-lib" target="1.8" />
+      <module name="quiz-service" target="17" />
+      <module name="user-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="EntreQuizDev" options="" />
+      <module name="EntreQuizDev" options="-parameters" />
     </option>
   </component>
 </project>
