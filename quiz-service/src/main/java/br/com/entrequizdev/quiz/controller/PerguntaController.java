@@ -1,6 +1,6 @@
 package br.com.entrequizdev.quiz.controller;
 
-import br.com.entrequizdev.quiz.dto.AtualizarPergunta;
+import br.com.entrequizdev.quiz.dto.AtualizarPerguntaDTO;
 import br.com.entrequizdev.quiz.dto.PerguntaDTO;
 import br.com.entrequizdev.quiz.entity.Pergunta;
 import br.com.entrequizdev.quiz.service.PerguntaService;
@@ -27,10 +27,10 @@ public class PerguntaController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> atualizarPergunta(@PathVariable("id") Long id, @RequestBody AtualizarPergunta atualizarPergunta) {
+    public ResponseEntity<?> atualizarPergunta(@PathVariable("id") Long id, @RequestBody AtualizarPerguntaDTO atualizarPerguntaDTO) {
 
 
-        perguntaService.atualizarPergunta(id, atualizarPergunta);
+        perguntaService.atualizarPergunta(id, atualizarPerguntaDTO);
         return ResponseEntity.noContent().build();
 
     }

@@ -50,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.QuizServiceApplication (1).executor": "Run",
-    "Spring Boot.QuizServiceApplication.executor": "Run",
+    "Spring Boot.QuizServiceApplication.executor": "Debug",
     "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "dev",
@@ -98,7 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+  <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
     <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="quiz-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
@@ -169,7 +169,7 @@
       <workItem from="1749078090523" duration="1938000" />
       <workItem from="1749083662675" duration="4331000" />
       <workItem from="1749162345284" duration="3358000" />
-      <workItem from="1749509325423" duration="9930000" />
+      <workItem from="1749509325423" duration="10949000" />
     </task>
     <servers />
   </component>

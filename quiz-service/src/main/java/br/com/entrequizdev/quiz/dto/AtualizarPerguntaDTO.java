@@ -2,7 +2,7 @@ package br.com.entrequizdev.quiz.dto;
 
 import br.com.entrequizdev.quiz.enums.AreasEnum;
 
-public record AtualizarPergunta(
+public record AtualizarPerguntaDTO(
         String pergunta,
         String resposta_certa,
         String resposta_errada_1,
