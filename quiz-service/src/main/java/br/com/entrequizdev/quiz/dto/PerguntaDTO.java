@@ -1,5 +1,6 @@
 package br.com.entrequizdev.quiz.dto;
 
+import br.com.entrequizdev.quiz.enums.AreasEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class PerguntaDTO {
     private String resposta_errada_5;
     private String resposta_errada_6;
     private String resposta_errada_7;
+    private AreasEnum areas;
 
 }

@@ -4,13 +4,16 @@ package br.com.entrequizdev.quiz.service;
 import br.com.entrequizdev.quiz.dto.AtualizarPergunta;
 import br.com.entrequizdev.quiz.dto.PerguntaDTO;
 import br.com.entrequizdev.quiz.entity.Pergunta;
+import br.com.entrequizdev.quiz.enums.AreasEnum;
 import br.com.entrequizdev.quiz.exception.DadosInvalidosException;
 import br.com.entrequizdev.quiz.repository.PerguntaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.EnumSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
@@ -19,7 +22,6 @@ public class PerguntaService {
 
     @Autowired
     private PerguntaRepository perguntaRepository;
-
 
 
     public Pergunta createOrUptadeQuestion(PerguntaDTO perguntaDTO) {
@@ -32,7 +34,26 @@ public class PerguntaService {
                 !isNotBlank(perguntaDTO.getResposta_errada_3())) {
             throw new DadosInvalidosException("Campos obrigatórios não preenchidos.");
         }
+        if (perguntaDTO.getAreas() == null || perguntaDTO.getAreas().equals("")) {
+            throw new DadosInvalidosException("Area obrigatória não preenchida.");
+        }
+        Set<AreasEnum> areasEnums = EnumSet.of(
+                AreasEnum.BACKEND_JR,
+                AreasEnum.BACKEND_PLENO,
+                AreasEnum.BACKEND_SENIOR,
+                AreasEnum.FRONTEND_JR,
+                AreasEnum.FRONTEND_PLENO,
+                AreasEnum.FRONTEND_SENIOR,
+                AreasEnum.DEVOPS_JR,
+                AreasEnum.DEVOPS_PLENO,
+                AreasEnum.DEVOPS_SENIOR,
+                AreasEnum.ESTAGIO,
+                AreasEnum.SEM_AREA
+        );
 
+        if (!areasEnums.contains(perguntaDTO.getAreas())) {
+            throw new DadosInvalidosException("Area errada");
+        }
 
         // valida se o projeto se o id existe e se sim atualiza o mesmo
 

@@ -5,6 +5,7 @@ import br.com.entrequizdev.user.config.UserDetailsImpl;
 import br.com.entrequizdev.user.dto.*;
 import br.com.entrequizdev.user.entity.Role;
 import br.com.entrequizdev.user.entity.Usuario;
+import br.com.entrequizdev.user.enums.AreasEnum;
 import br.com.entrequizdev.user.enums.RoleName;
 import br.com.entrequizdev.user.exception.DadosInvalidosException;
 import br.com.entrequizdev.user.repository.RoleRepository;
@@ -56,63 +57,109 @@ public class UsuarioService {
 
     // Método responsável por criar um usuário
     public void createUser(CreateUserDto createUserDto) {
-
-
+        // Verifica se o e-mail já está cadastrado
         if (usuarioRepository.findByEmail(createUserDto.email()).isPresent()) {
-
-            throw new RuntimeException("email ja cadastrado");
+            throw new RuntimeException("E-mail já cadastrado");
         }
-        // Cria um novo usuário com os dados fornecidos
-        //caso queira mudar a role, tem que fazer um patch
+        if (createUserDto.name().isEmpty() || createUserDto.name().isBlank() || createUserDto.name() == null) {
+            throw new RuntimeException("name esta incorreto");
+        }
+        if (createUserDto.email().isEmpty() || createUserDto.email().isBlank() || createUserDto.email() == null) {
+            throw new RuntimeException("email esta incorreto");
+        }
+
+
+
+        // Define a área do novo usuário: se não vier, usa SEM_AREA
+        AreasEnum areaEnum = createUserDto.areas() != null
+                ? createUserDto.areas()
+                : AreasEnum.SEM_AREA;
+
+        // Cria o novo usuário
         Usuario newUser = Usuario.builder()
                 .nome(createUserDto.name())
                 .email(createUserDto.email())
-                // Codifica a senha do usuário com o algoritmo bcrypt
                 .senha(securityConfiguration.passwordEncoder().encode(createUserDto.password()))
-                // Atribui ao usuário uma permissão específica
                 .roles(List.of(Role.builder().name(RoleName.ROLE_JOGADOR).build()))
+                .area(areaEnum.name())
                 .build();
 
-
-        // Salva o novo usuário no banco de dados
+        // Salva o novo usuário
         usuarioRepository.save(newUser);
 
-
     }
 
 
-    public Usuario mudarDadosUsuario(String email, changeUser changeUser) {
-        Usuario usuarioAntigo = usuarioRepository.findByEmail(email)
-                .orElseThrow(() -> new DadosInvalidosException("Usuário não encontrado"));
-
-        if (changeUser.name() != null) {
-            usuarioAntigo.setNome(changeUser.name());
+    public ResponseEntity<?> mudarDadosUsuario(String authorizationHeader, UserResponseDto changeUser) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token ausente ou inválido");
+        }
+        if (usuarioRepository.findByEmail(changeUser.email()).isPresent()) {
+            throw new RuntimeException("E-mail já cadastrado");
+        }
+        if (changeUser.name().isEmpty() || changeUser.name().isBlank() || changeUser.name() == null) {
+            throw new RuntimeException("name esta incorreto");
+        }
+        if (changeUser.email().isEmpty() || changeUser.email().isBlank() || changeUser.email() == null) {
+            throw new RuntimeException("email esta incorreto");
         }
 
-        if (changeUser.email() != null) {
-            usuarioAntigo.setEmail(changeUser.email());
-        }
-
-        if (changeUser.password() != null) {
-            usuarioAntigo.setSenha(changeUser.password());
-        }
-
-        if (changeUser.roleName() != null) {
-            Role role = roleRepository.findByName(changeUser.roleName())
-                    .orElseThrow(() -> new DadosInvalidosException("Role não encontrada"));
-
-            usuarioAntigo.setRoles(List.of(role)); // substitui todas as roles por essa nova
-        }
-
-        return usuarioRepository.save(usuarioAntigo);
-    }
-
-    public ResponseEntity<UserResponseDto> dadosUsuario(String authorizationHeader) {
         try {
-            if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            String token = authorizationHeader.substring(7);
+            String email = jwtTokenService.getSubjectFromToken(token);
+
+            Usuario usuario = usuarioRepository.findByEmail(email)
+                    .orElseThrow(() -> new DadosInvalidosException("Usuário não encontrado"));
+
+            // Atualiza nome, se fornecido
+            if (changeUser.name() != null && !changeUser.name().isBlank()) {
+                usuario.setNome(changeUser.name());
             }
 
+            // Atualiza email, se fornecido, e verifica se não está em uso
+            if (changeUser.email() != null && !changeUser.email().equals(usuario.getEmail())) {
+                if (usuarioRepository.findByEmail(changeUser.email()).isPresent()) {
+                    return ResponseEntity.status(HttpStatus.CONFLICT).body("E-mail já está em uso");
+                }
+                usuario.setEmail(changeUser.email());
+            }
+
+            // Atualiza roles, se fornecidas
+            if (changeUser.roles() != null && !changeUser.roles().isEmpty()) {
+                List<Role> novasRoles = changeUser.roles().stream()
+                        .map(roleName -> roleRepository.findByName(RoleName.valueOf(roleName))
+                                .orElseThrow(() -> new DadosInvalidosException("Role não encontrada: " + roleName)))
+                        .toList();
+                usuario.setRoles(novasRoles);
+            }
+
+            // Atualiza área, se fornecida
+            if (changeUser.areas() != null) {
+                try {
+                    AreasEnum areaEnum = AreasEnum.valueOf(changeUser.areas());
+                    usuario.setArea(areaEnum.name());
+                } catch (IllegalArgumentException e) {
+                    return ResponseEntity.badRequest().body("Área inválida: " + changeUser.areas());
+                }
+            }
+
+            Usuario usuarioAtualizado = usuarioRepository.save(usuario);
+            return ResponseEntity.ok(usuarioAtualizado);
+
+        } catch (DadosInvalidosException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar usuário");
+        }
+    }
+
+
+    public ResponseEntity<?> dadosUsuario(String authorizationHeader) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token ausente ou inválido");
+        }
+
+        try {
             String token = authorizationHeader.substring(7);
             String email = jwtTokenService.getSubjectFromToken(token);
 
@@ -126,16 +173,17 @@ public class UsuarioService {
             UserResponseDto dto = new UserResponseDto(
                     usuario.getNome(),
                     usuario.getEmail(),
+                    usuario.getArea(),
                     roles
             );
 
             return ResponseEntity.ok(dto);
 
+        } catch (DadosInvalidosException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao buscar dados do usuário");
         }
     }
-
-
 
 }

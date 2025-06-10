@@ -45,4 +45,7 @@ public class Pergunta {
 
     @Column(name = "resposta_errada_7")
     private String resposta_errada_7;
+
+    @Column(name = "area")
+    private String area;
 }

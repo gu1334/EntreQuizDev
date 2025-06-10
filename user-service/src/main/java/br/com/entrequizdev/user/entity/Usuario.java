@@ -32,6 +32,9 @@ public class Usuario {
     @Column(name = "senha")
     private String senha;
 
+    @Column(name = "area")
+    private String area;
+
 //ele ira criar uma tabela onde ira relacionar o usuario a role, sem ter que criar uma coluna
 // nova na entity usuario
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)

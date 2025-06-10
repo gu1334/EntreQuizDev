@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/dto/ChangeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/dto/changeUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +18,7 @@
         <option value="Dockerfile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -60,7 +56,7 @@
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "D:/EntreQuizDev/user-service/src/main/java/br/com/EntreQuizDev.user",
-    "last_opened_file_path": "D:/EntreQuizDev/shared-lib/shared-lib/src/main/java/com/entrequiz/shared/jwt",
+    "last_opened_file_path": "D:/EntreQuizDev/quiz-service/src/main/java/br/com/entrequizdev/quiz",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EntreQuizDev\quiz-service\src\main\java\br\com\entrequizdev\quiz" />
       <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\jwt" />
       <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\exceptions" />
       <recent name="D:\EntreQuizDev\shared-lib\shared-lib\src\main\java\com\entrequiz\shared\dto" />
       <recent name="D:\EntreQuizDev\shared-lib" />
-      <recent name="D:\EntreQuizDev" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\EntreQuizDev\EntreQuizDev" />
@@ -172,7 +168,8 @@
       <workItem from="1749075197094" duration="2620000" />
       <workItem from="1749078090523" duration="1938000" />
       <workItem from="1749083662675" duration="4331000" />
-      <workItem from="1749162345284" duration="2972000" />
+      <workItem from="1749162345284" duration="3358000" />
+      <workItem from="1749509325423" duration="9930000" />
     </task>
     <servers />
   </component>

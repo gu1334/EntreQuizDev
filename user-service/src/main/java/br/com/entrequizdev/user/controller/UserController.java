@@ -46,17 +46,20 @@ public class UserController {
     }
 
     //mudar todos os dados do usuario
-    @PatchMapping("/changeUser/{email}")
-    public ResponseEntity<?> mudarDadosUser(@PathVariable("email") String email, @RequestBody changeUser changeUser) {
-        usuarioService.mudarDadosUsuario(email, changeUser);
+    //Mudar a role do usuario, que significa mudar as perfuntas de acordo com a role, fazer que ele mude somente a role
+    @PatchMapping("/preferences")
+    public ResponseEntity<?> mudarDadosUser(@RequestHeader("Authorization") String authorizationHeader, @RequestBody UserResponseDto changeUser) {
+        usuarioService.mudarDadosUsuario(authorizationHeader, changeUser);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
+    //retorna os dados do usuario
     @GetMapping("/me")
-    public ResponseEntity<UserResponseDto> getCurrentUser(@RequestHeader("Authorization") String authorizationHeader) {
+    public ResponseEntity<?> getCurrentUser(@RequestHeader("Authorization") String authorizationHeader) {
         return usuarioService.dadosUsuario(authorizationHeader);
     }
+
 
 
 
