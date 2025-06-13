@@ -4,11 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="" />
+    <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/RespostaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AleatorioRespostasDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/RespostaIncorreta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/RespostaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EntreQuizDev/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EntreQuizDev/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/PerguntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/PerguntaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AtualizarPerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AtualizarPerguntaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/PerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/PerguntaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/Pergunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/Pergunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/PerguntaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/PerguntaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,7 +50,15 @@
   "keyToString": {
     "Maven.EntreQuizDev [clean,install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.QuizServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "D:/EntreQuizDev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -38,14 +68,41 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="EntreQuizDevApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="EntreQuizDev" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.EntreQuizDev.EntreQuizDevApplication" />
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="br.com.entrequizdev.quiz.controller" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
+    <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="quiz-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.user.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,8 +111,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
@@ -67,6 +124,9 @@
       <option name="presentableId" value="Default" />
       <updated>1746572140904</updated>
       <workItem from="1746572142170" duration="840000" />
+      <workItem from="1749598063773" duration="1514000" />
+      <workItem from="1749757244372" duration="14000" />
+      <workItem from="1749769021690" duration="7854000" />
     </task>
     <servers />
   </component>
