@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/RespostaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AleatorioRespostasDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/RespostaIncorreta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/RespostaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/RegistroResposta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/RegistroRespostaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EntreQuizDev/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EntreQuizDev/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/PerguntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/PerguntaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AtualizarPerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AtualizarPerguntaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/PerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/PerguntaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/Pergunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/Pergunta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/PerguntaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/PerguntaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/RespostaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/RespostaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/RespostaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/RespostaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,11 +118,21 @@
       <workItem from="1746572142170" duration="840000" />
       <workItem from="1749598063773" duration="1514000" />
       <workItem from="1749757244372" duration="14000" />
-      <workItem from="1749769021690" duration="7854000" />
+      <workItem from="1749769021690" duration="9088000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

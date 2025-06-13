@@ -16,11 +16,10 @@ public class RespostaController {
     private RespostaService respostaService;
 
 
-    @PostMapping("/{id}/{numeroResposta}") // Endpoint mais RESTful
+    @PostMapping("/{id}/{numeroResposta}")
     public ResponseEntity<?> responderPerguntaPorId(@PathVariable("id") Long id, @PathVariable("numeroResposta") int numeroResposta) {
         return respostaService.responderPergunta(id, numeroResposta);
     }
-
 
     @GetMapping("/aleatoria/{area}") // Endpoint mais descritivo
     public ResponseEntity<AleatorioRespostasDTO> buscarPerguntaPorAreaAleatoria(@PathVariable("area") AreasEnum area) {
