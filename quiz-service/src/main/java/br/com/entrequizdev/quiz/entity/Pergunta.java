@@ -1,10 +1,14 @@
 package br.com.entrequizdev.quiz.entity;
 
+import br.com.entrequizdev.quiz.enums.AreasEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList; // Importe ArrayList
+import java.util.List; // Importe List
 
 @Entity
 @Table(name = "perguntas")
@@ -16,36 +20,37 @@ public class Pergunta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Integer id;
+    @Column(name = "id")
+    private Long id; // Usar Long para ID é uma boa prática
 
-    @Column(name = "pergunta")
+    @Column(name = "pergunta", nullable = false, length = 500) // Defina um tamanho adequado
     private String pergunta;
 
-    @Column(name = "resposta_certa")
-    private String resposta_certa;
+    @Column(name = "resposta_correta", nullable = false, length = 255) // Defina um tamanho adequado
+    private String respostaCorreta; // Nome da coluna e atributo padronizados
 
-    @Column(name = "resposta_errada_1")
-    private String resposta_errada_1;
+    // Relacionamento One-to-Many com RespostaIncorreta
+    // mappedBy indica o campo na entidade RespostaIncorreta que mapeia este relacionamento
+    // cascade = CascadeType.ALL significa que operações (persist, remove) na Pergunta
+    // serão propagadas para as RespostasIncorretas associadas.
+    // orphanRemoval = true garante que se uma resposta incorreta for removida da lista,
+    // ela será deletada do banco de dados.
+    @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<RespostaIncorreta> respostasIncorretas = new ArrayList<>(); // Inicialize a lista
 
-    @Column(name = "resposta_errada_2")
-    private String resposta_errada_2;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "area", nullable = false)
+    private AreasEnum area;
 
-    @Column(name = "resposta_errada_3")
-    private String resposta_errada_3;
+    // Método auxiliar para adicionar respostas incorretas e manter a consistência do relacionamento
+    public void addRespostaIncorreta(RespostaIncorreta respostaIncorreta) {
+        this.respostasIncorretas.add(respostaIncorreta);
+        respostaIncorreta.setPergunta(this);
+    }
 
-    @Column(name = "resposta_errada_4")
-    private String resposta_errada_4;
-
-    @Column(name = "resposta_errada_5")
-    private String resposta_errada_5;
-
-    @Column(name = "resposta_errada_6")
-    private String resposta_errada_6;
-
-    @Column(name = "resposta_errada_7")
-    private String resposta_errada_7;
-
-    @Column(name = "area")
-    private String area;
+    // Método auxiliar para remover respostas incorretas
+    public void removeRespostaIncorreta(RespostaIncorreta respostaIncorreta) {
+        this.respostasIncorretas.remove(respostaIncorreta);
+        respostaIncorreta.setPergunta(null);
+    }
 }

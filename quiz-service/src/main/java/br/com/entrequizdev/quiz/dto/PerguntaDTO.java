@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List; // Importar java.util.List
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -14,14 +16,8 @@ public class PerguntaDTO {
 
     private Long id;
     private String pergunta;
-    private String resposta_certa;
-    private String resposta_errada_1;
-    private String resposta_errada_2;
-    private String resposta_errada_3;
-    private String resposta_errada_4;
-    private String resposta_errada_5;
-    private String resposta_errada_6;
-    private String resposta_errada_7;
-    private AreasEnum areas;
+    private String respostaCorreta; // Alterado para camelCase para consistência
+    private List<String> respostasIncorretas; // Usando uma lista para as respostas incorretas
+    private AreasEnum area; // Alterado para singular para consistência
 
 }
