@@ -1,5 +1,6 @@
 package br.com.entrequizdev.user.controller;
 
+import br.com.entrequizdev.user.dto.TokenValidationResponse;
 import br.com.entrequizdev.user.service.JwtTokenService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
@@ -31,19 +34,27 @@ public class AuthController {
                     @ApiResponse(responseCode = "401", description = "Token não fornecido ou inválido")
             })
     @GetMapping("/pergunta")
-    public ResponseEntity<String> validateToken(@RequestHeader("Authorization") String authorizationHeader) {
+    public ResponseEntity<TokenValidationResponse> validateToken(@RequestHeader("Authorization") String authorizationHeader) {
         try {
             if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token não fornecido");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null); // Pode retornar null ou um erro customizado
             }
 
             String token = authorizationHeader.substring(7); // remove "Bearer "
-            String subject = jwtTokenService.getSubjectFromToken(token);
 
-            return ResponseEntity.ok("Token válido para usuário: " + subject);
+            // Chamar os novos métodos para obter subject e roles
+            String subject = jwtTokenService.getSubjectFromToken(token);
+            List<String> roles = jwtTokenService.getRolesFromToken(token);
+
+            // Criar o objeto de resposta
+            TokenValidationResponse response = new TokenValidationResponse(subject, roles);
+
+            return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token inválido ou expirado");
+            // Logar a exceção para depuração
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null); // Pode retornar null ou um erro customizado
         }
     }
 }
