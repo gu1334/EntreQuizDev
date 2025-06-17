@@ -18,6 +18,7 @@ public class SecurityConfig {
 
     // Endpoints que não requerem autenticação (acesso público)
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
+            "/teste/publico",
             "/auth/pergunta", // Manter o endpoint de validação de token como público
             "/swagger-ui.html",
             "/swagger-ui/**",

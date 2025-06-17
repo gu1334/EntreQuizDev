@@ -7,16 +7,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity; // Importar ResponseEntity
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.util.AntPathMatcher; // Importar AntPathMatcher
 
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors; // Importar Collectors
+import java.util.stream.Collectors;
+import java.util.Arrays; // Importar Arrays
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
@@ -24,54 +26,67 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Autowired
     private AuthClient authClient;
 
+    // Defina os caminhos que este filtro deve ignorar.
+    // DEVE SER OS MESMOS CAMINHOS QUE ESTÃO EM ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED no SecurityConfig
+    private static final String[] AUTH_WHITELIST = {
+            "/auth/pergunta",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/v3/api-docs.yaml"
+    };
+
+    private AntPathMatcher pathMatcher = new AntPathMatcher(); // Usar AntPathMatcher para corresponder padrões de URL
+
+    // Sobrescreve o método shouldNotFilter para ignorar certos caminhos
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+        String requestUri = request.getRequestURI();
+        return Arrays.stream(AUTH_WHITELIST).anyMatch(pattern -> pathMatcher.match(pattern, requestUri));
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+        // ... (resto do seu código do doFilterInternal permanece o mesmo) ...
+
         String token = request.getHeader("Authorization");
 
         if (token != null && token.startsWith("Bearer ")) {
             try {
-                // 1. Chamar authClient.validateToken e obter TokenValidationResponse
                 ResponseEntity<TokenValidationResponse> authResponse = authClient.validateToken(token);
 
                 if (authResponse.getStatusCode() == HttpStatus.OK && authResponse.getBody() != null) {
                     TokenValidationResponse validationResponse = authResponse.getBody();
-
-                    // 2. Extrair roles e username
                     String username = validationResponse.getUsername();
                     List<String> roles = validationResponse.getRoles();
 
-                    // 3. Converter para SimpleGrantedAuthority
                     List<SimpleGrantedAuthority> authorities = roles.stream()
-                            .map(role -> new SimpleGrantedAuthority("ROLE_" + role)) // Importante: Spring Security espera "ROLE_" prefixo
+                            .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                             .collect(Collectors.toList());
 
-                    // 4. Usar para criar UsernamePasswordAuthenticationToken
                     UsernamePasswordAuthenticationToken authentication =
                             new UsernamePasswordAuthenticationToken(
-                                    username, // Usar o username retornado pelo serviço de usuário
-                                    null, // Credenciais nulas, pois já foram validadas pelo JWT
-                                    authorities // Usar as authorities obtidas do token
+                                    username,
+                                    null,
+                                    authorities
                             );
 
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
                 } else {
-                    // Se a resposta do serviço de autenticação não for OK
                     response.setStatus(HttpStatus.UNAUTHORIZED.value());
                     response.getWriter().write("Falha na validação do token pelo serviço de autenticação.");
                     return;
                 }
 
             } catch (Exception e) {
-                // Logar a exceção para depuração
                 e.printStackTrace();
                 response.setStatus(HttpStatus.UNAUTHORIZED.value());
                 response.getWriter().write("Token inválido ou expirado.");
                 return;
             }
         } else {
-            // Se o token estiver ausente ou mal formatado
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
             response.getWriter().write("Token ausente ou formato inválido (Bearer Token esperado).");
             return;
