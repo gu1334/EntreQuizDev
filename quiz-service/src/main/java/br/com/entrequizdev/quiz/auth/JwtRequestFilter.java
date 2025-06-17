@@ -26,16 +26,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         String token = request.getHeader("Authorization");
 
-
         if (token != null && token.startsWith("Bearer ")) {
             try {
-                authClient.validateToken(token); // chama o user-service
+                authClient.validateToken(token);
 
-                // Se chegou até aqui, o token é válido.
-                // Cria uma autenticação manual:
                 UsernamePasswordAuthenticationToken authentication =
                         new UsernamePasswordAuthenticationToken(
-                                "user", // pode ser o email, username, etc.
+                                "user",
                                 null,
                                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
                         );

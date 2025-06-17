@@ -3,17 +3,17 @@ package br.com.entrequizdev.quiz.service;
 import br.com.entrequizdev.quiz.dto.AleatorioRespostasDTO;
 import br.com.entrequizdev.quiz.dto.PerguntaDTO;
 import br.com.entrequizdev.quiz.entity.Pergunta;
-import br.com.entrequizdev.quiz.entity.RegistroResposta; // Importe a nova entidade
+import br.com.entrequizdev.quiz.entity.RegistroResposta;
 import br.com.entrequizdev.quiz.entity.RespostaIncorreta;
 import br.com.entrequizdev.quiz.enums.AreasEnum;
 import br.com.entrequizdev.quiz.repository.PerguntaRepository;
-import br.com.entrequizdev.quiz.repository.RegistroRespostaRepository; // Importe o novo repositório
+import br.com.entrequizdev.quiz.repository.RegistroRespostaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime; // Importe para usar LocalDateTime
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,9 +26,8 @@ public class RespostaService {
     private PerguntaRepository perguntaRepository;
 
     @Autowired
-    private RegistroRespostaRepository registroRespostaRepository; // <--- NOVIDADE AQUI: Injetando o novo repositório
+    private RegistroRespostaRepository registroRespostaRepository;
 
-    // ... (Seus métodos toDTO e aleatorioRespostasDTO permanecem os mesmos) ...
     private PerguntaDTO toDTO(Pergunta entity) {
         PerguntaDTO dto = new PerguntaDTO();
         dto.setId(entity.getId());
@@ -77,7 +76,6 @@ public class RespostaService {
         return aleatorioRespostasDTO(perguntaAleatoria);
     }
 
-    @SuppressWarnings("checkstyle:LineLength") // Ignora o erro de tamanho da linha para a mensagem de sucesso
     public ResponseEntity<?> responderPergunta(Long id, int numeroResposta) {
         Pergunta pergunta = perguntaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Pergunta com ID " + id + " não encontrada."));
@@ -86,23 +84,23 @@ public class RespostaService {
         todasRespostas.add(pergunta.getRespostaCorreta());
         pergunta.getRespostasIncorretas().forEach(ri -> todasRespostas.add(ri.getTextoResposta()));
 
-        if (numeroResposta < 0 || numeroResposta >= todasRespostas.size()) {
+        int indiceRealDaResposta = numeroResposta - 1;
+
+        if (indiceRealDaResposta < 0 || indiceRealDaResposta >= todasRespostas.size()) {
             return ResponseEntity.badRequest().body("Número de resposta inválido.");
         }
 
-        String respostaEscolhida = todasRespostas.get(numeroResposta);
+        String respostaEscolhida = todasRespostas.get(indiceRealDaResposta);
         boolean isCorreta = pergunta.getRespostaCorreta().equalsIgnoreCase(respostaEscolhida);
 
-        // <--- NOVIDADE AQUI: Salvando o registro da resposta
         RegistroResposta registro = new RegistroResposta();
-        registro.setPergunta(pergunta); // Associa a pergunta que foi respondida
-        registro.setRespostaEscolhida(respostaEscolhida); // Salva o texto da resposta que o usuário escolheu
-        registro.setCorreta(isCorreta); // Define se foi correta ou incorreta
-        registro.setDataHoraResposta(LocalDateTime.now()); // Registra o momento da resposta
+        registro.setPergunta(pergunta);
+        registro.setRespostaEscolhida(respostaEscolhida);
+        registro.setCorreta(isCorreta);
+        registro.setDataHoraResposta(LocalDateTime.now());
 
-        registroRespostaRepository.save(registro); // Salva o registro no banco de dados
+        registroRespostaRepository.save(registro);
 
-        // Retorna a resposta para o front-end
         if (isCorreta) {
             return ResponseEntity.ok("Resposta Correta! Registro salvo.");
         } else {

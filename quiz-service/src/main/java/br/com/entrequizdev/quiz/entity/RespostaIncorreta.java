@@ -19,10 +19,10 @@ public class RespostaIncorreta {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "texto_resposta", nullable = false, length = 255) // Ou TEXT se as respostas forem muito longas
+    @Column(name = "texto_resposta", nullable = false, length = 255)
     private String textoResposta;
 
-    @ManyToOne // Muitas respostas incorretas podem pertencer a uma pergunta
-    @JoinColumn(name = "pergunta_id", nullable = false) // Coluna de chave estrangeira
-    private Pergunta pergunta; // Relacionamento com a entidade Pergunta
+    @ManyToOne
+    @JoinColumn(name = "pergunta_id", nullable = false)
+    private Pergunta pergunta;
 }

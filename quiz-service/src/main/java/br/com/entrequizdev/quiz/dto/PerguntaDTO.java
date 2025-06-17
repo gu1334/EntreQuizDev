@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List; // Importar java.util.List
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,8 +16,8 @@ public class PerguntaDTO {
 
     private Long id;
     private String pergunta;
-    private String respostaCorreta; // Alterado para camelCase para consistência
-    private List<String> respostasIncorretas; // Usando uma lista para as respostas incorretas
-    private AreasEnum area; // Alterado para singular para consistência
+    private String respostaCorreta;
+    private List<String> respostasIncorretas;
+    private AreasEnum area;
 
 }
