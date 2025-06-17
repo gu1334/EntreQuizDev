@@ -1,6 +1,5 @@
 package br.com.entrequizdev.quiz.auth;
 
-import br.com.entrequizdev.quiz.auth.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,17 +16,45 @@ public class SecurityConfig {
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
 
+    // Endpoints que não requerem autenticação (acesso público)
+    public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
+            "/auth/pergunta", // Manter o endpoint de validação de token como público
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/v3/api-docs.yaml"
+    };
+
+    // Endpoints que requerem autenticação, mas não uma role específica
+    public static final String[] ENDPOINTS_WITH_AUTHENTICATION_REQUIRED = {
+            "/resposta",
+            "/resposta/**"
+    };
+
+    // Endpoints que só podem ser acessados por usuários com a permissão de JOGADOR
+    public static final String[] ENDPOINTS_JOGADOR = {
+    };
+
+    // Endpoints que só podem ser acessados por usuários com a permissão de ADMINISTRATOR
+    public static final String[] ENDPOINTS_ADMIN = {
+            "/perguntas/**",
+            "/perguntas"
+    };
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf().disable()
-                .authorizeHttpRequests()
-                .requestMatchers("/CadastrarPergunta/**").authenticated()
-                .anyRequest().permitAll()
+                .csrf().disable() // Desativa a proteção contra CSRF
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Configura a política de criação de sessão como stateless
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .authorizeHttpRequests() // Habilita a autorização para as requisições HTTP
+                .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED).permitAll() // Permite acesso público
+                .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_REQUIRED).authenticated() // Requer autenticação
+                .requestMatchers(ENDPOINTS_ADMIN).hasRole("ADMINISTRATOR") // Requer role ADMINISTRATOR
+                .requestMatchers(ENDPOINTS_JOGADOR).hasRole("JOGADOR") // Requer role JOGADOR
+                .anyRequest().denyAll() // Nega qualquer outra requisição que não foi explicitamente permitida acima
                 .and()
-                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class) // Adiciona nosso filtro JWT
                 .build();
     }
 }

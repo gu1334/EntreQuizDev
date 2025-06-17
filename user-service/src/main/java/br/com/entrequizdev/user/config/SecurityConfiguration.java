@@ -23,7 +23,11 @@ public class SecurityConfiguration {
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
             "/users/login",
             "/users",
-            "/auth/pergunta"
+            "/auth/pergunta",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/v3/api-docs.yaml"
     };
 
     // Endpoints que requerem autenticação para serem acessados

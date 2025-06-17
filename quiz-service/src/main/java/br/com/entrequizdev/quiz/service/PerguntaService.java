@@ -4,28 +4,31 @@ import br.com.entrequizdev.quiz.dto.AleatorioRespostasDTO;
 import br.com.entrequizdev.quiz.dto.AtualizarPerguntaDTO;
 import br.com.entrequizdev.quiz.dto.PerguntaDTO;
 import br.com.entrequizdev.quiz.entity.Pergunta;
-import br.com.entrequizdev.quiz.entity.RespostaIncorreta; // Importe a nova entidade
+import br.com.entrequizdev.quiz.entity.RegistroResposta;
+import br.com.entrequizdev.quiz.entity.RespostaIncorreta;
 import br.com.entrequizdev.quiz.enums.AreasEnum;
 import br.com.entrequizdev.quiz.exception.DadosInvalidosException;
 import br.com.entrequizdev.quiz.repository.PerguntaRepository;
+import br.com.entrequizdev.quiz.repository.RegistroRespostaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional; // Import para @Transactional
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.apache.logging.log4j.util.Strings.isNotBlank; // Ok para manter
+import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
 @Service
 public class PerguntaService {
 
     @Autowired
     private PerguntaRepository perguntaRepository;
-
-
 
     private Pergunta toEntity(PerguntaDTO dto) {
         Pergunta entity = new Pergunta();
@@ -38,7 +41,7 @@ public class PerguntaService {
                     .map(texto -> {
                         RespostaIncorreta ri = new RespostaIncorreta();
                         ri.setTextoResposta(texto);
-                        ri.setPergunta(entity); // Garante a referência bidirecional
+                        ri.setPergunta(entity);
                         return ri;
                     })
                     .collect(Collectors.toList());
@@ -54,7 +57,6 @@ public class PerguntaService {
         dto.setPergunta(entity.getPergunta());
         dto.setRespostaCorreta(entity.getRespostaCorreta());
 
-        // Mapear respostas incorretas da entidade para DTO
         if (entity.getRespostasIncorretas() != null) {
             dto.setRespostasIncorretas(entity.getRespostasIncorretas().stream()
                     .map(RespostaIncorreta::getTextoResposta)
@@ -64,10 +66,7 @@ public class PerguntaService {
         return dto;
     }
 
-
-    // --- Métodos de Serviço ---
-
-    @Transactional // Garante que a operação seja atômica
+    @Transactional
     public PerguntaDTO createOrUpdateQuestion(PerguntaDTO perguntaDTO) {
 
         if (!isNotBlank(perguntaDTO.getPergunta()) ||
@@ -80,8 +79,6 @@ public class PerguntaService {
         if (perguntaDTO.getArea() == null) {
             throw new DadosInvalidosException("Área obrigatória não preenchida.");
         }
-
-
 
         Pergunta perguntaEntity;
 
@@ -103,33 +100,28 @@ public class PerguntaService {
             }
 
         } else {
-            // Cria nova pergunta
-            perguntaEntity = toEntity(perguntaDTO); // Usa o método de mapeamento para criar a entidade
+            perguntaEntity = toEntity(perguntaDTO);
         }
 
         Pergunta savedPergunta = perguntaRepository.save(perguntaEntity);
-        return toDTO(savedPergunta); // Retorna o DTO da pergunta salva
+        return toDTO(savedPergunta);
     }
 
     @Transactional
-    public PerguntaDTO atualizarPergunta(Long id, AtualizarPerguntaDTO atualizarPerguntaDTO) { // Retornar DTO
+    public PerguntaDTO atualizarPergunta(Long id, AtualizarPerguntaDTO atualizarPerguntaDTO) {
 
         Pergunta perguntaExistente = perguntaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Pergunta com ID " + id + " não encontrada."));
 
-        // Aplica atualizações somente se o campo não for nulo no DTO
         if (isNotBlank(atualizarPerguntaDTO.pergunta())) {
             perguntaExistente.setPergunta(atualizarPerguntaDTO.pergunta());
         }
-        if (isNotBlank(atualizarPerguntaDTO.respostaCorreta())) { // Usando o novo nome do campo
+        if (isNotBlank(atualizarPerguntaDTO.respostaCorreta())) {
             perguntaExistente.setRespostaCorreta(atualizarPerguntaDTO.respostaCorreta());
         }
 
-        // Atualização de respostas incorretas:
-        // Se o DTO de atualização contém uma lista de respostas incorretas,
-        // assumimos que é uma substituição completa das respostas existentes.
         if (atualizarPerguntaDTO.respostasIncorretas() != null) {
-            perguntaExistente.getRespostasIncorretas().clear(); // Limpa as antigas
+            perguntaExistente.getRespostasIncorretas().clear();
             atualizarPerguntaDTO.respostasIncorretas().forEach(textoResposta -> {
                 RespostaIncorreta novaResposta = new RespostaIncorreta();
                 novaResposta.setTextoResposta(textoResposta);
@@ -137,16 +129,15 @@ public class PerguntaService {
             });
         }
 
-        // Atualiza área, se fornecida
-        if (atualizarPerguntaDTO.area() != null) { // Agora o campo é 'area' e já é um Enum
+        if (atualizarPerguntaDTO.area() != null) {
             perguntaExistente.setArea(atualizarPerguntaDTO.area());
         }
 
         Pergunta updatedPergunta = perguntaRepository.save(perguntaExistente);
-        return toDTO(updatedPergunta); // Retorna o DTO da pergunta atualizada
+        return toDTO(updatedPergunta);
     }
 
-    public List<PerguntaDTO> buscarTodasPerguntas() { // Retornar lista de DTOs
+    public List<PerguntaDTO> buscarTodasPerguntas() {
         return perguntaRepository.findAll().stream()
                 .map(this::toDTO)
                 .collect(Collectors.toList());
@@ -159,9 +150,4 @@ public class PerguntaService {
         }
         perguntaRepository.deleteById(id);
     }
-
-
-
-
-
 }
