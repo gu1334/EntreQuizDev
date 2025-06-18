@@ -112,31 +112,35 @@ public class UserController {
     }
 
     @Operation(summary = "Atualiza dados do usuário",
-            description = "Permite que um usuário autenticado atualize seus próprios dados.",
+            description = "Permite que um usuário autenticado atualize seus próprios dados, incluindo nome, email, roles, área e senha.",
             parameters = {
                     @Parameter(name = "Authorization", description = "Token JWT no formato 'Bearer [token]'", required = true,
                             schema = @Schema(type = "string", format = "jwt", example = "Bearer eyJhbGciOiJIUzI1Ni..."))
             },
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
-                    description = "Dados do usuário para atualização",
+                    description = "Dados do usuário para atualização. Para atualizar a senha, inclua o campo 'password'.",
                     required = true,
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = UserResponseDto.class), // Assume que UserResponseDto é o DTO para atualizar
+                            schema = @Schema(implementation = UserResponseDto.class),
                             examples = @ExampleObject(
-                                    value = "{\"email\": \"novo.email@example.com\", \"name\": \"Nome Atualizado\"}"
+                                    value = "{\"email\": \"novo.email@example.com\", \"name\": \"Nome Atualizado\", \"password\": \"novaSenhaForte123\"}"
                             )
                     )
             ),
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Dados do usuário atualizados com sucesso"),
+                    @ApiResponse(responseCode = "200", description = "Dados do usuário atualizados com sucesso",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class),
+                                    examples = @ExampleObject(value = "{\"name\": \"Nome Atualizado\", \"email\": \"novo.email@example.com\", \"areas\": \"TECNOLOGIA\", \"roles\": [\"ROLE_JOGADOR\"]}"))),
                     @ApiResponse(responseCode = "401", description = "Não autenticado ou token inválido"),
-                    @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos ou sem permissão")
+                    @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos"),
+                    @ApiResponse(responseCode = "409", description = "Conflito: e-mail já está em uso"),
+                    @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
             })
     @PatchMapping("/preferences")
     public ResponseEntity<?> mudarDadosUser(@RequestHeader("Authorization") String authorizationHeader, @RequestBody UserResponseDto changeUser) {
-        usuarioService.mudarDadosUsuario(authorizationHeader, changeUser);
-        return new ResponseEntity<>(HttpStatus.OK);
+        // O método mudarDadosUsuario no service já retorna ResponseEntity, então podemos retornar diretamente.
+        return usuarioService.mudarDadosUsuario(authorizationHeader, changeUser);
     }
 
     @Operation(summary = "Retorna dados do usuário autenticado",
@@ -147,7 +151,7 @@ public class UserController {
             },
             responses = {
                     @ApiResponse(responseCode = "200", description = "Dados do usuário recuperados com sucesso",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))), // <-- CORRIGIDO AQUI
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
                     @ApiResponse(responseCode = "401", description = "Não autenticado ou token inválido")
             })
     @GetMapping("/me")

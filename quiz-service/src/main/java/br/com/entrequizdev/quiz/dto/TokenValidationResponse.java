@@ -1,17 +1,16 @@
 package br.com.entrequizdev.quiz.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 // Crie esta classe em um pacote adequado, ex: br.com.entrequizdev.user.dto
+@AllArgsConstructor
+@NoArgsConstructor
 public class TokenValidationResponse {
     private String username;
     private List<String> roles;
-
-    // Construtores, getters e setters
-    public TokenValidationResponse(String username, List<String> roles) {
-        this.username = username;
-        this.roles = roles;
-    }
 
     public String getUsername() {
         return username;

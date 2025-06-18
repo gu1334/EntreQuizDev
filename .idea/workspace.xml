@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/dto/PasswordUpdateRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/TokenValidationResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="quiz-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
@@ -114,8 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.QuizServiceApplication" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
+        <item itemvalue="Spring Boot.QuizServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +142,7 @@
       <workItem from="1749769021690" duration="11296000" />
       <workItem from="1750115390850" duration="186000" />
       <workItem from="1750117116413" duration="295000" />
-      <workItem from="1750118445833" duration="9401000" />
+      <workItem from="1750118445833" duration="11186000" />
     </task>
     <servers />
   </component>

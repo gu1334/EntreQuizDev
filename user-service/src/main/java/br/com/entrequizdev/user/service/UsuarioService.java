@@ -16,9 +16,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -38,6 +40,8 @@ public class UsuarioService {
     @Autowired
     private RoleRepository roleRepository; // agora você pode buscar a role pelo enum
 
+    @Autowired // Adicionar injeção de dependência para BCryptPasswordEncoder
+    private BCryptPasswordEncoder passwordEncoder;
 
     // Método responsável por autenticar um usuário e retornar um token JWT
     public RecoveryJwtTokenDto authenticateUser(LoginUserDto loginUserDto) {
@@ -69,7 +73,6 @@ public class UsuarioService {
         }
 
 
-
         // Define a área do novo usuário: se não vier, usa SEM_AREA
         AreasEnum areaEnum = createUserDto.areas() != null
                 ? createUserDto.areas()
@@ -94,14 +97,16 @@ public class UsuarioService {
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token ausente ou inválido");
         }
-        if (usuarioRepository.findByEmail(changeUser.email()).isPresent()) {
-            throw new RuntimeException("E-mail já cadastrado");
+        // A validação de e-mail já cadastrado aqui está um pouco redundante se o email não mudou.
+        // O ideal é verificar apenas se o email foi alterado e se o novo email já existe.
+        // if (usuarioRepository.findByEmail(changeUser.email()).isPresent()) {
+        //     throw new RuntimeException("E-mail já cadastrado");
+        // }
+        if (changeUser.name() != null && (changeUser.name().isEmpty() || changeUser.name().isBlank())) {
+            return ResponseEntity.badRequest().body("Nome está incorreto");
         }
-        if (changeUser.name().isEmpty() || changeUser.name().isBlank() || changeUser.name() == null) {
-            throw new RuntimeException("name esta incorreto");
-        }
-        if (changeUser.email().isEmpty() || changeUser.email().isBlank() || changeUser.email() == null) {
-            throw new RuntimeException("email esta incorreto");
+        if (changeUser.email() != null && (changeUser.email().isEmpty() || changeUser.email().isBlank())) {
+            return ResponseEntity.badRequest().body("Email está incorreto");
         }
 
         try {
@@ -117,11 +122,16 @@ public class UsuarioService {
             }
 
             // Atualiza email, se fornecido, e verifica se não está em uso
-            if (changeUser.email() != null && !changeUser.email().equals(usuario.getEmail())) {
+            if (changeUser.email() != null && !changeUser.email().isBlank() && !changeUser.email().equals(usuario.getEmail())) {
                 if (usuarioRepository.findByEmail(changeUser.email()).isPresent()) {
                     return ResponseEntity.status(HttpStatus.CONFLICT).body("E-mail já está em uso");
                 }
                 usuario.setEmail(changeUser.email());
+            }
+
+            // Atualiza senha, se fornecida
+            if (changeUser.password() != null && !changeUser.password().isBlank()) {
+                usuario.setSenha(passwordEncoder.encode(changeUser.password()));
             }
 
             // Atualiza roles, se fornecidas
@@ -144,12 +154,22 @@ public class UsuarioService {
             }
 
             Usuario usuarioAtualizado = usuarioRepository.save(usuario);
-            return ResponseEntity.ok(usuarioAtualizado);
+            // Retorna um DTO sem a senha para segurança
+            UserResponseDto retornoDto = new UserResponseDto(
+                    usuarioAtualizado.getNome(),
+                    usuarioAtualizado.getEmail(),
+                    usuarioAtualizado.getArea(),
+                    usuarioAtualizado.getRoles().stream().map(role -> role.getName().name()).toList(),
+                    null // Não retorna a senha no DTO de resposta
+            );
+            return ResponseEntity.ok(retornoDto);
 
         } catch (DadosInvalidosException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar usuário");
+            // Logar a exceção para depuração
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar usuário: " + e.getMessage());
         }
     }
 
@@ -174,7 +194,8 @@ public class UsuarioService {
                     usuario.getNome(),
                     usuario.getEmail(),
                     usuario.getArea(),
-                    roles
+                    roles,
+                    null // Não retorna a senha ao buscar dados do usuário
             );
 
             return ResponseEntity.ok(dto);
@@ -186,4 +207,8 @@ public class UsuarioService {
         }
     }
 
+    // O método updatePassword foi removido
+    // public Optional<Usuario> updatePassword(Long userId, String newPassword) {
+    //    // ... (código removido)
+    // }
 }

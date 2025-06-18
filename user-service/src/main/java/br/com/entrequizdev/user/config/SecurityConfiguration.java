@@ -22,6 +22,7 @@ public class SecurityConfiguration {
 
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
             "/users/login",
+            // "/users", // REMOVA ESTA LINHA!
             "/auth/pergunta",
             "/swagger-ui.html",
             "/swagger-ui/**",
