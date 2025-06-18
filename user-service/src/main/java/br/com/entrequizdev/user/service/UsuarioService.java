@@ -207,8 +207,4 @@ public class UsuarioService {
         }
     }
 
-    // O método updatePassword foi removido
-    // public Optional<Usuario> updatePassword(Long userId, String newPassword) {
-    //    // ... (código removido)
-    // }
 }
