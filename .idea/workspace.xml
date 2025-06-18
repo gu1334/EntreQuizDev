@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,20 +86,38 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
-    <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="quiz-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.entrequizdev.quiz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.user.UserServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.entrequizdev.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.QuizServiceApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -123,7 +140,7 @@
       <workItem from="1749769021690" duration="11296000" />
       <workItem from="1750115390850" duration="186000" />
       <workItem from="1750117116413" duration="295000" />
-      <workItem from="1750118445833" duration="7228000" />
+      <workItem from="1750118445833" duration="9401000" />
     </task>
     <servers />
   </component>

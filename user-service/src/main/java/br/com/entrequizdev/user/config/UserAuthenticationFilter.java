@@ -44,6 +44,7 @@ public class UserAuthenticationFilter extends OncePerRequestFilter {
                         // Cria um objeto de autenticação do Spring Security
                         UsernamePasswordAuthenticationToken authentication =
                                 new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                        System.out.println("DEBUG - Authorities in SecurityContext for user " + authentication.getName() + ": " + authentication.getAuthorities());
 
                         // Define o objeto de autenticação no contexto de segurança do Spring Security
                         SecurityContextHolder.getContext().setAuthentication(authentication);

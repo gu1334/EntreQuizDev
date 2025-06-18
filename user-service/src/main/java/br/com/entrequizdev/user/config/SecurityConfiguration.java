@@ -22,7 +22,6 @@ public class SecurityConfiguration {
 
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
             "/users/login",
-            "/users",
             "/auth/pergunta",
             "/swagger-ui.html",
             "/swagger-ui/**",
@@ -55,8 +54,8 @@ public class SecurityConfiguration {
                 .and().authorizeHttpRequests() // Habilita a autorização para as requisições HTTP
                 .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED).permitAll()
                 .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_REQUIRED).authenticated()
-                .requestMatchers(ENDPOINTS_ADMIN).hasRole("ADMINISTRATOR") // Repare que não é necessário colocar "ROLE" antes do nome, como fizemos na definição das roles
-                .requestMatchers(ENDPOINTS_JOGADOR).hasRole("JOGADOR")
+                .requestMatchers(ENDPOINTS_ADMIN).hasAuthority("ROLE_ADMINISTRATOR") // Mude hasRole para hasAuthority
+                .requestMatchers(ENDPOINTS_JOGADOR).hasAuthority("ROLE_JOGADOR")    // E também para JOGADOR, se tiver
                 .anyRequest().denyAll()
                 // Adiciona o filtro de autenticação de usuário que criamos, antes do filtro de segurança padrão do Spring Security
                 .and().addFilterBefore(userAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

@@ -62,7 +62,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                     List<String> roles = validationResponse.getRoles();
 
                     List<SimpleGrantedAuthority> authorities = roles.stream()
-                            .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                            .map(SimpleGrantedAuthority::new) // Apenas crie a autoridade com a string literal.
                             .collect(Collectors.toList());
 
                     UsernamePasswordAuthenticationToken authentication =
