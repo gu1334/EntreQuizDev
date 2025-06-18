@@ -18,6 +18,7 @@ public class SecurityConfig {
 
     // Endpoints que não requerem autenticação (acesso público)
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
+            "/teste/publico",
             "/auth/pergunta", // Manter o endpoint de validação de token como público
             "/swagger-ui.html",
             "/swagger-ui/**",
@@ -50,8 +51,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests() // Habilita a autorização para as requisições HTTP
                 .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED).permitAll() // Permite acesso público
                 .requestMatchers(ENDPOINTS_WITH_AUTHENTICATION_REQUIRED).authenticated() // Requer autenticação
-                .requestMatchers(ENDPOINTS_ADMIN).hasRole("ADMINISTRATOR") // Requer role ADMINISTRATOR
-                .requestMatchers(ENDPOINTS_JOGADOR).hasRole("JOGADOR") // Requer role JOGADOR
+                .requestMatchers(ENDPOINTS_ADMIN).hasAuthority("ROLE_ADMINISTRATOR") // Mude hasRole para hasAuthority
+                .requestMatchers(ENDPOINTS_JOGADOR).hasAuthority("ROLE_JOGADOR")    // E também para JOGADOR, se tiver
                 .anyRequest().denyAll() // Nega qualquer outra requisição que não foi explicitamente permitida acima
                 .and()
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class) // Adiciona nosso filtro JWT
