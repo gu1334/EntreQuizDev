@@ -69,7 +69,7 @@ public class UserController {
                     @ApiResponse(responseCode = "400", description = "Dados de criação inválidos ou usuário já existe",
                             content = @Content(mediaType = "text/plain", examples = @ExampleObject(value = "E-mail já cadastrado"))) // <-- CORRIGIDO AQUI
             })
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Void> createUser(@RequestBody CreateUserDto createUserDto) {
         usuarioService.createUser(createUserDto);
         return new ResponseEntity<>(HttpStatus.CREATED);

@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/PointsServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/AuthClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/dto/TokenValidationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/entity/PointsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/test/java/br/com/EntreQuizDev/PointsServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +73,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   },
@@ -67,8 +86,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EntreQuizDev" />
+    </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="br.com.entrequizdev.quiz.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.entrequizdev.quiz.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -82,6 +107,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+    <configuration name="PointsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="quiz-service (1)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.PointsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="quiz-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
@@ -110,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="Spring Boot.QuizServiceApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +168,8 @@
       <workItem from="1749769021690" duration="11296000" />
       <workItem from="1750115390850" duration="186000" />
       <workItem from="1750117116413" duration="295000" />
-      <workItem from="1750118445833" duration="11557000" />
+      <workItem from="1750118445833" duration="11875000" />
+      <workItem from="1750327146426" duration="2065000" />
     </task>
     <servers />
   </component>
