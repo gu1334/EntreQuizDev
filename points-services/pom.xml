@@ -11,8 +11,8 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>quiz-service</artifactId>
-    <name>Quiz Service</name>
+    <artifactId>points-services</artifactId>
+    <name>points Services</name>
     <description>Microserviço responsável pela gestão de quizzes no EntreQuizDev</description>
 
     <dependencyManagement>

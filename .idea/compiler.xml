@@ -8,13 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="quiz-service" />
-        <module name="quiz-service (1)" />
         <module name="user-service" />
+        <module name="points-services" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="points-services" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

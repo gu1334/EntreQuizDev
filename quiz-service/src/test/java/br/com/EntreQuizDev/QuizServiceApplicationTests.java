@@ -1,6 +1,6 @@
 package br.com.EntreQuizDev;
 
-import br.com.entrequizdev.quiz.QuizServiceApplication;
+import br.com.entrequizdev.points.QuizServiceApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
