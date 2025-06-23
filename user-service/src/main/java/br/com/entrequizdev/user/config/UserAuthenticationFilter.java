@@ -21,54 +21,49 @@ import java.util.Arrays;
 public class UserAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtTokenService jwtTokenService; // Service que definimos anteriormente
+    private JwtTokenService jwtTokenService;
 
     @Autowired
-    private UsuarioRepository usuarioRepository; // Repository que definimos anteriormente
+    private UsuarioRepository usuarioRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        // >>>>>> POR FAVOR, ADICIONE ESTA LINHA AQUI <<<<<<
+        System.out.println("DEBUG - UserAuthenticationFilter foi acionado para URI: " + request.getRequestURI());
+
         // Verifica se o endpoint requer autenticação antes de processar a requisição
         if (checkIfEndpointIsNotPublic(request)) {
-            String token = recoveryToken(request); // Recupera o token do cabeçalho Authorization da requisição
+            String token = recoveryToken(request);
             if (token != null) {
-                String subject = jwtTokenService.getSubjectFromToken(token); // Obtém o assunto (neste caso, o nome de usuário) do token
+                String subject = jwtTokenService.getSubjectFromToken(token);
 
-                // Garante que o usuário exista antes de tentar carregar UserDetails
                 if (subject != null) {
-                    Usuario usuario = usuarioRepository.findByEmail(subject).orElse(null); // Usar orElse(null) para evitar NoSuchElementException
+                    Usuario usuario = usuarioRepository.findByEmail(subject).orElse(null);
                     if (usuario != null) {
-                        // UserDetailsImpl é o nome da sua implementação de UserDetails
                         UserDetails userDetails = new UserDetailsImpl(usuario);
 
-                        // Cria um objeto de autenticação do Spring Security
                         UsernamePasswordAuthenticationToken authentication =
                                 new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                         System.out.println("DEBUG - Authorities in SecurityContext for user " + authentication.getName() + ": " + authentication.getAuthorities());
 
-                        // Define o objeto de autenticação no contexto de segurança do Spring Security
                         SecurityContextHolder.getContext().setAuthentication(authentication);
                     } else {
-                        // Se o usuário não for encontrado pelo email do token
-                        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
+                        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                         response.getWriter().write("Usuário do token não encontrado.");
-                        return; // Impede que a requisição continue
+                        return;
                     }
                 } else {
-                    // Se o assunto (email) não puder ser extraído do token
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     response.getWriter().write("Token inválido ou com assunto ausente.");
-                    return; // Impede que a requisição continue
+                    return;
                 }
             } else {
-                // Se o token estiver ausente E o endpoint não for público
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.getWriter().write("O token de autenticação está ausente.");
-                return; // Impede que a requisição continue
-                // throw new RuntimeException("O token está ausente."); // Evite RuntimeException em filtros, prefira configurar o response
+                return;
             }
         }
-        filterChain.doFilter(request, response); // Continua o processamento da requisição
+        filterChain.doFilter(request, response);
     }
 
     // Recupera o token do cabeçalho Authorization da requisição

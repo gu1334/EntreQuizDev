@@ -5,11 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb784038-01c6-42d6-90b2-7da0bc5437dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/entity/UserAreaPoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/repository/UserAreaPointsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/service/UserAreaPointsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/br/com/entrequizdev/user/config/UserAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/PointsServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/PointsServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/AuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/auth/AuthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/auth/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/auth/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/dto/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/points/dto/TokenValidationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/main/java/br/com/entrequizdev/quiz/entity/PointsEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/points-services/src/test/java/br/com/EntreQuizDev/PointsServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/points-services/src/test/java/br/com/EntreQuizDev/PointsServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/QuizServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/QuizServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/AuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/auth/AuthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/auth/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/auth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/auth/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/PerguntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/controller/PerguntaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/controller/RespostaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/controller/RespostaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AleatorioRespostasDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/dto/AleatorioRespostasDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/AtualizarPerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/dto/AtualizarPerguntaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/PerguntaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/dto/PerguntaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/dto/TokenValidationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/dto/TokenValidationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/Pergunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/entity/Pergunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/RegistroResposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/entity/RegistroResposta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/entity/RespostaIncorreta.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/entity/RespostaIncorreta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/enums/AreasEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/enums/AreasEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/exception/DadosInvalidosException.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/exception/DadosInvalidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/PerguntaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/repository/PerguntaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/repository/RegistroRespostaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/repository/RegistroRespostaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/service/PerguntaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/quiz/service/RespostaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/main/java/br/com/entrequizdev/points/service/RespostaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz-service/src/test/java/br/com/EntreQuizDev/QuizServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-service/src/test/java/br/com/EntreQuizDev/QuizServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,41 +66,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.EntreQuizDev [clean,install].executor": "Run",
-    "Maven.quiz-service [clean,install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.QuizServiceApplication.executor": "Run",
-    "Spring Boot.UserServiceApplication.executor": "Run",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "D:/EntreQuizDev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.EntreQuizDev [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.quiz-service [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.QuizServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/EntreQuizDev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EntreQuizDev" />
+    </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="br.com.entrequizdev.quiz.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.entrequizdev.quiz.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,13 +119,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.QuizServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+    <configuration name="PointsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="points-services" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.points.PointsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QuizServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="quiz-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.quiz.QuizServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.entrequizdev.points.QuizServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.entrequizdev.quiz.*" />
+          <option name="PATTERN" value="br.com.entrequizdev.points.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,7 +181,9 @@
       <workItem from="1749769021690" duration="11296000" />
       <workItem from="1750115390850" duration="186000" />
       <workItem from="1750117116413" duration="295000" />
-      <workItem from="1750118445833" duration="9401000" />
+      <workItem from="1750118445833" duration="11875000" />
+      <workItem from="1750327146426" duration="4051000" />
+      <workItem from="1750716547847" duration="301000" />
     </task>
     <servers />
   </component>
