@@ -18,8 +18,7 @@ public class SecurityConfig {
 
     // Endpoints que não requerem autenticação (acesso público)
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_NOT_REQUIRED = {
-            "",
-            "/auth/pergunta", // Manter o endpoint de validação de token como público
+
             "/swagger-ui.html",
             "/swagger-ui/**",
             "/v3/api-docs/**",
@@ -28,7 +27,7 @@ public class SecurityConfig {
 
     // Endpoints que requerem autenticação, mas não uma role específica
     public static final String[] ENDPOINTS_WITH_AUTHENTICATION_REQUIRED = {
-
+        "/points"
     };
 
     // Endpoints que só podem ser acessados por usuários com a permissão de JOGADOR

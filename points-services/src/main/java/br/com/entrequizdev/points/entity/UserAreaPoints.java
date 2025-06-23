@@ -1,4 +1,4 @@
-package br.com.entrequizdev.pointsservice.entity; // Ajuste o pacote conforme a estrutura do seu projeto
+package br.com.entrequizdev.points.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -34,5 +34,8 @@ public class UserAreaPoints {
 
     @Column(name = "last_updated")
     private LocalDateTime lastUpdated;
+
+    @Column(name = "points")
+    private int points;
 
 }
