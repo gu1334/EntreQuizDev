@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="quiz-service" />
         <module name="user-service" />
+        <module name="shared-dtos" />
         <module name="points-services" />
       </profile>
     </annotationProcessing>

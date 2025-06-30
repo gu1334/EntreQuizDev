@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/EntreQuizDev/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/shared-dto/pom.xml" />
+        <option value="$PROJECT_DIR$/shared-dtos/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

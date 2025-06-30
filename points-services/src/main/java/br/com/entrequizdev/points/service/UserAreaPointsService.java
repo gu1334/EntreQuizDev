@@ -1,9 +1,10 @@
 package br.com.entrequizdev.points.service;
 
-import br.com.entrequizdev.points.dto.UpdatePointsRequestDTO;
 import br.com.entrequizdev.points.entity.UserAreaPoints;
 import br.com.entrequizdev.points.repository.UserAreaPointsRepository;
+import br.com.entrequizdev.shared.dto.UpdatePointsRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime; // Importar LocalDateTime
 
@@ -36,4 +37,10 @@ public class UserAreaPointsService {
     }
 
 
+    @KafkaListener(topics = "quiz-points-topic", groupId = "points-service-group")
+    public void listenForPointsUpdate(UpdatePointsRequestDTO dto) {
+        System.out.println("Mensagem de pontuação recebida do Kafka: " + dto.getUserId() + " - " + dto.getAreaName() + " - " + dto.getPontosGanhos());
+        // Chama a lógica principal de atualização de pontos
+        criarAtualizarPontuacao(dto);
+    }
 }

@@ -1,4 +1,4 @@
-package br.com.entrequizdev.points.dto;
+package br.com.entrequizdev.shared.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

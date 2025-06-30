@@ -1,7 +1,7 @@
 package br.com.entrequizdev.points.controller;
 
-import br.com.entrequizdev.points.dto.UpdatePointsRequestDTO;
 import br.com.entrequizdev.points.service.UserAreaPointsService;
+import br.com.entrequizdev.shared.dto.UpdatePointsRequestDTO;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
